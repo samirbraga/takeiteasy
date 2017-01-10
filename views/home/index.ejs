@@ -24,7 +24,7 @@
 					</div>
 				</div>
 			</div>
-			<hr class="bottom-line">
+			<!-- <hr class="bottom-line">  -->
 		</div>
 		<main class="page">
 			<section class="introduce">
@@ -35,9 +35,26 @@
 				</p>
 			</section>
 			<header>
-				<h1>Nossos Serviços<span>:</span></h1>
+				<h1>
+					<span>Nossos Serviços:<br>
+					<hr>
+					</span>
+				</h1>
 			</header>
 			<section class="main-services" > 
+			<% services.forEach( function(service, index) {	%><div class="service">
+					<div class="service-image" style="background-image: url('/public/images/services/<%- service.imageSrc  %>')" ></div>
+					<span class="service-title"><%- service.name %></span>
+				</div><% }) %>
+			</section>
+			<header>
+				<h1>
+					<span>Conheça-nos:<br>
+					<hr>
+					</span>
+				</h1>
+			</header>
+			<section class="meet-us" > 
 			</section>
 		</main>
 		<footer class="main-footer" >

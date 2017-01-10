@@ -1,6 +1,7 @@
 const express = require('express'),
 	  app = express(),
 	  http = require('http'),
+	  load = require('express-load'),
 	  path = require('path');
 
 const server = http.createServer(app);
@@ -17,11 +18,11 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.disable('x-powered-by');
 
 
-app.get('/', (req, res) => {
-	res.render('home/index')
-})
+load('controllers').
+	then('routes').
+		into(app);
 
-const port = Number( process.env.PORT || 3000 )
+const port = Number( process.env.PORT || 8000 );
 server.listen(port, () => {
 	console.log('TakeItEasy running in port ' + port);
 });

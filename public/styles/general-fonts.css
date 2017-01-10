@@ -106,7 +106,7 @@
 @font-face {
 	font-family: 'MJ AlGhifari';
 	src: url('/public/fonts/MJAlGhifari/MJAlGhifari.eot');
-	src: url(/public/fonts/MJAlGhifari/'MJAlGhifari.eot?#iefix') format('embedded-opentype'),
+	src: url('/public/fonts/MJAlGhifari/MJAlGhifari.eot?#iefix') format('embedded-opentype'),
 		url('/public/fonts/MJAlGhifari/MJAlGhifari.woff') format('woff'),
 		url('/public/fonts/MJAlGhifari/MJAlGhifari.ttf') format('truetype');
 	font-weight: normal;
