@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 	res.render('home/index')
 })
 
-server.listen(8000, () => {
-	console.log('TakeItEasy running in port 8000');
+const port = Number( process.env.PORT || 3000 )
+server.listen(port, () => {
+	console.log('TakeItEasy running in port ' + port);
 });
