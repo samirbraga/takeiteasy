@@ -1,13 +1,4 @@
 
-@font-face {
-    font-family: "MJ AlGhifari";
-    src: url('public/fonts/MJ AlGhifari Demo_0.ttf');
-	src: url('public/fonts/MJ AlGhifari Demo_0.eot?#iefix') format('embedded-opentype'),
-	     url('public/fonts/MJ AlGhifari Demo_0.woff') format('woff'),
-	     url('public/fonts/MJ AlGhifari Demo_0.ttf') format('truetype'),
-	     url('public/fonts/MJ AlGhifari Demo_0.svg#futura_mdcn_btmedium') format('svg');
-}
-
 *{
 	margin: 0;
 	border: 0;
