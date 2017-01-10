@@ -2,100 +2,100 @@
 
 @font-face {
 	font-family: 'Bree Rg';
-	src: url('/public/fonts/bree/Bree-Regular.eot');
-	src: url('/public/fonts/bree/Bree-Regular.eot?#iefix') format('embedded-opentype'),
-		url('/public/fonts/bree/Bree-Regular.woff') format('woff'),
-		url('/public/fonts/bree/Bree-Regular.ttf') format('truetype');
+	src: url('/public/fonts/Bree/Bree-Regular.eot');
+	src: url('/public/fonts/Bree/Bree-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/public/fonts/Bree/Bree-Regular.woff') format('woff'),
+		url('/public/fonts/Bree/Bree-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Bree Th';
-	src: url('/public/fonts/bree/Bree-Thin.eot');
-	src: url('/public/fonts/bree/Bree-Thin.eot?#iefix') format('embedded-opentype'),
-		url('/public/fonts/bree/Bree-Thin.woff') format('woff'),
-		url('/public/fonts/bree/Bree-Thin.ttf') format('truetype');
+	src: url('/public/fonts/Bree/Bree-Thin.eot');
+	src: url('/public/fonts/Bree/Bree-Thin.eot?#iefix') format('embedded-opentype'),
+		url('/public/fonts/Bree/Bree-Thin.woff') format('woff'),
+		url('/public/fonts/Bree/Bree-Thin.ttf') format('truetype');
 	font-weight: 100;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Bree EB';
-	src: url('/public/fonts/bree/Bree-ExtraBoldOblique.eot');
-	src: url('/public/fonts/bree/Bree-ExtraBoldOblique.eot?#iefix') format('embedded-opentype'),
-		url('/public/fonts/bree/Bree-ExtraBoldOblique.woff') format('woff'),
-		url('/public/fonts/bree/Bree-ExtraBoldOblique.ttf') format('truetype');
+	src: url('/public/fonts/Bree/Bree-ExtraBoldOblique.eot');
+	src: url('/public/fonts/Bree/Bree-ExtraBoldOblique.eot?#iefix') format('embedded-opentype'),
+		url('/public/fonts/Bree/Bree-ExtraBoldOblique.woff') format('woff'),
+		url('/public/fonts/Bree/Bree-ExtraBoldOblique.ttf') format('truetype');
 	font-weight: 800;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Bree Lt';
-	src: url('/public/fonts/bree/Bree-Light.eot');
-	src: url('/public/fonts/bree/Bree-Light.eot?#iefix') format('embedded-opentype'),
-		url('/public/fonts/bree/Bree-Light.woff') format('woff'),
-		url('/public/fonts/bree/Bree-Light.ttf') format('truetype');
+	src: url('/public/fonts/Bree/Bree-Light.eot');
+	src: url('/public/fonts/Bree/Bree-Light.eot?#iefix') format('embedded-opentype'),
+		url('/public/fonts/Bree/Bree-Light.woff') format('woff'),
+		url('/public/fonts/Bree/Bree-Light.ttf') format('truetype');
 	font-weight: 300;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Bree Lt';
-	src: url('/public/fonts/bree/Bree-LightOblique.eot');
-	src: url('/public/fonts/bree/Bree-LightOblique.eot?#iefix') format('embedded-opentype'),
-		url('/public/fonts/bree/Bree-LightOblique.woff') format('woff'),
-		url('/public/fonts/bree/Bree-LightOblique.ttf') format('truetype');
+	src: url('/public/fonts/Bree/Bree-LightOblique.eot');
+	src: url('/public/fonts/Bree/Bree-LightOblique.eot?#iefix') format('embedded-opentype'),
+		url('/public/fonts/Bree/Bree-LightOblique.woff') format('woff'),
+		url('/public/fonts/Bree/Bree-LightOblique.ttf') format('truetype');
 	font-weight: 300;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Bree EB';
-	src: url('/public/fonts/bree/Bree-ExtraBold.eot');
-	src: url('/public/fonts/bree/Bree-ExtraBold.eot?#iefix') format('embedded-opentype'),
-		url('/public/fonts/bree/Bree-ExtraBold.woff') format('woff'),
-		url('/public/fonts/bree/Bree-ExtraBold.ttf') format('truetype');
+	src: url('/public/fonts/Bree/Bree-ExtraBold.eot');
+	src: url('/public/fonts/Bree/Bree-ExtraBold.eot?#iefix') format('embedded-opentype'),
+		url('/public/fonts/Bree/Bree-ExtraBold.woff') format('woff'),
+		url('/public/fonts/Bree/Bree-ExtraBold.ttf') format('truetype');
 	font-weight: 800;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Bree Th';
-	src: url('/public/fonts/bree/Bree-ThinOblique.eot');
-	src: url('/public/fonts/bree/Bree-ThinOblique.eot?#iefix') format('embedded-opentype'),
-		url('/public/fonts/bree/Bree-ThinOblique.woff') format('woff'),
-		url('/public/fonts/bree/Bree-ThinOblique.ttf') format('truetype');
+	src: url('/public/fonts/Bree/Bree-ThinOblique.eot');
+	src: url('/public/fonts/Bree/Bree-ThinOblique.eot?#iefix') format('embedded-opentype'),
+		url('/public/fonts/Bree/Bree-ThinOblique.woff') format('woff'),
+		url('/public/fonts/Bree/Bree-ThinOblique.ttf') format('truetype');
 	font-weight: 100;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Bree Rg';
-	src: url('/public/fonts/bree/Bree-Oblique.eot');
-	src: url('/public/fonts/bree/Bree-Oblique.eot?#iefix') format('embedded-opentype'),
-		url('/public/fonts/bree/Bree-Oblique.woff') format('woff'),
-		url('/public/fonts/bree/Bree-Oblique.ttf') format('truetype');
+	src: url('/public/fonts/Bree/Bree-Oblique.eot');
+	src: url('/public/fonts/Bree/Bree-Oblique.eot?#iefix') format('embedded-opentype'),
+		url('/public/fonts/Bree/Bree-Oblique.woff') format('woff'),
+		url('/public/fonts/Bree/Bree-Oblique.ttf') format('truetype');
 	font-weight: normal;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Bree Rg';
-	src: url('/public/fonts/bree/Bree-Bold.eot');
-	src: url('/public/fonts/bree/Bree-Bold.eot?#iefix') format('embedded-opentype'),
-		url('/public/fonts/bree/Bree-Bold.woff') format('woff'),
-		url('/public/fonts/bree/Bree-Bold.ttf') format('truetype');
+	src: url('/public/fonts/Bree/Bree-Bold.eot');
+	src: url('/public/fonts/Bree/Bree-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/public/fonts/Bree/Bree-Bold.woff') format('woff'),
+		url('/public/fonts/Bree/Bree-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Bree Rg';
-	src: url('/public/fonts/bree/Bree-BoldOblique.eot');
-	src: url('/public/fonts/bree/Bree-BoldOblique.eot?#iefix') format('embedded-opentype'),
-		url('/public/fonts/bree/Bree-BoldOblique.woff') format('woff'),
-		url('/public/fonts/bree/Bree-BoldOblique.ttf') format('truetype');
+	src: url('/public/fonts/Bree/Bree-BoldOblique.eot');
+	src: url('/public/fonts/Bree/Bree-BoldOblique.eot?#iefix') format('embedded-opentype'),
+		url('/public/fonts/Bree/Bree-BoldOblique.woff') format('woff'),
+		url('/public/fonts/Bree/Bree-BoldOblique.ttf') format('truetype');
 	font-weight: bold;
 	font-style: italic;
 }
