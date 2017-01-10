@@ -15,8 +15,17 @@ $(document).ready(function(){
 	function fadeInServices(){
 		$('.service').each(function(i){
 			$(this).delay((+i+1)*100).fadeTo('slow', 1);
-		})
-	}
+		});
+	}/*
+	$('.service').on('mouseenter', function(e){
+		e.preventDefault();
+		$('.service').stop().fadeTo('fast', 0.4);
+		$(this).stop().fadeTo('fast', 1);
+		$('.service').on('mouseleave', function(evt){
+			evt.preventDefault();
+			$('.service').fadeTo('fast', 1);
+		});
+	});*/
 	$(document).scroll(function(){
 		if(document.body.scrollTop >= mainServices.offset().top-200){
 			fadeInServices()

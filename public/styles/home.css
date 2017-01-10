@@ -210,6 +210,10 @@ body{
 	will-change: opacity;
 }
 
+.main-services .service a {
+	text-decoration: none;
+}
+
 @media (max-width: 1150px){
 
 	.main-services .service{
@@ -231,11 +235,17 @@ body{
 	}
 }
 
+@media (max-width: 500px){
+	.main-services .service{
+		width: 100%;
+	}
+}
+
 .main-services .service:after{
 	content: '';
 	width: 50%;
 	height: 1px;
-	background: cornflowerblue;
+	background: #D8E4FA;
 	position: absolute;
 	bottom: 0;
 	left: 50%;
@@ -248,7 +258,7 @@ body{
 	content: '';
 	height: 50%;
 	width: 1px;
-	background: cornflowerblue;
+	background: #D8E4FA;
 	position: absolute;
 	right: 0;
 	top: 50%;
