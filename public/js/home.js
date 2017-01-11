@@ -16,7 +16,12 @@ $(document).ready(function(){
 		$('.service').each(function(i){
 			$(this).delay((+i+1)*100).fadeTo('slow', 1);
 		});
-	}/*
+	}
+	$('.introduce p').animate({
+		left: '-2px'
+	}, 2000)
+	$('.introduce p').fadeTo(0, 1)
+	/*
 	$('.service').on('mouseenter', function(e){
 		e.preventDefault();
 		$('.service').stop().fadeTo('fast', 0.4);

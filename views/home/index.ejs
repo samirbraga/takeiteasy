@@ -10,26 +10,12 @@
 		<script src="/public/js/home.js" ></script>
 	</head>
 	<body>
-		<div class="top-bar">
-			<hr class="soft-line">
-			<div class="top-bar-content">
-				<div class="main-logo">
-					<img src="/public/images/main-logo.png" alt="Logotipo TakeItEasy.com">
-				</div>
-				<div class="side-menu">
-					<div class="search-icon menu-options">
-					</div>
-					<div class="main-menu-icon menu-options">
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-				</div>
-			</div>
-			<!-- <hr class="bottom-line">  -->
-		</div>
+		<% include ../topbar %>
 		<main class="page">
 			<section class="introduce">
+				<!-- <div style="width: 100%; height: 100%; background: url('/public/images/welcome-takeiteasy-background.png') no-repeat; background-size: auto 100%; background-position: right;position: absolute;top: 0;left: 0;opacity: 1;mix-blend-mode: overlay;" > -->
+					
+				</div>
 				<p>
 					Se você tem um problema,
 					<br>
@@ -37,7 +23,7 @@
 				</p>
 			</section>
 			<header>
-				<h1>
+				<h1 class="section-title" >
 					<span>Nossos Serviços:<br>
 					<hr>
 					</span>
@@ -46,13 +32,13 @@
 			<section class="main-services" > 
 			<% services.forEach( function(service, index) {	%><div class="service">
 				<a href="<%- service.href%>">
-					<div class="service-image" style="background-image: url('/public/images/services/<%- service.imageSrc  %>')" ></div>
+					<div class="service-image" style="background-image: url('/public/images/services/dark-blue/dark-blue-<%- service.imageSrc  %>')" ></div>
 					<span class="service-title"><%- service.name %></span>
 				</a>
 			</div><% }) %>
 			</section>
 			<header>
-				<h1>
+				<h1 class="section-title" >
 					<span>Conheça-nos:<br>
 					<hr>
 					</span>
@@ -61,8 +47,6 @@
 			<section class="meet-us" > 
 			</section>
 		</main>
-		<footer class="main-footer" >
-			
-		</footer>
+		<% include ../footer%>
 	</body>
 </html>
