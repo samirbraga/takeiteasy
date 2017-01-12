@@ -1,12 +1,12 @@
 <html>
 	<head>
 		<meta charset="utf-8" >
-		<meta name="viewport" >
 		<title>TakeItEasy</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="/public/styles/general-fonts.css">
+		<link rel="stylesheet" href="/public/styles/top-bar.css">
 		<link rel="stylesheet" href="/public/styles/home.css">
 		<script src="/public/js/libs/jquery-3.1.1.min.js" ></script>
 		<script src="/public/js/home.js" ></script>
@@ -31,18 +31,20 @@
 			</section>
 			<header>
 				<h1 class="section-title" >
-					<span>Nossos Serviços:<br>
+					<span>Como nós te fazemos relaxar:<br>
 					<hr>
 					</span>
 				</h1>
 			</header>
-			<section class="main-services" > 
-			<% services.forEach( function(service, index) {	%><div class="service">
-				<a href="<%- service.href%>">
-					<div class="service-image" style="background-image: url('/public/images/services/dark-blue/dark-blue-<%- service.imageSrc  %>')" ></div>
-					<span class="service-title"><%- service.name %></span>
-				</a>
-			</div><% }) %>
+			<section class="makey-you-relax" > 
+				<!--
+				<%# services.forEach( function(service, index) {	%><div class="service">
+					<a href="<%#- service.href%>">
+						<div class="service-image" style="background-image: url('/public/images/services/dark-blue/dark-blue-<%#- service.imageSrc  %>')" ></div>
+						<span class="service-title"><%#- service.name %></span>
+					</a>
+				</div><%# }) %>
+				-->
 			</section>
 			<hr class="section-divider">
 			<header>

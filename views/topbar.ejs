@@ -1,136 +1,5 @@
-<style>
-	.top-bar{
-		width: 100%;
-		height: 90px;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 100;	
-	}
 
-	/*.tob-bar */ .soft-line{
-		width: 100%;
-		height: 5px;
-		background: cornflowerblue;
-		position: absolute;
-		left: 0;
-		top: 0;
-		background: #9b59b6;
-		z-index: 100;	
-		/*background: -webkit-linear-gradient(to left, #9b59b6 , #34495e);
-		background: linear-gradient(to left, #9b59b6 , #34495e);*/
-	        
-	}
-	/*.tob-bar */ .bottom-line{
-		width: calc(100% - 40px);
-		height: 1px;
-		background: rgba(255, 255, 255, 0.2);
-		position: absolute;
-		left: 50%;
-		bottom: 0;
-		-webkit-transform: translateX(-50%);
-		-moz-transform: translateX(-50%);
-		-o-transform: translateX(-50%);
-		transform: translateX(-50%);
-	}
-	.top-bar .top-bar-content{
-		height: 75px;
-		width: 100%;
-		position: relative;
-		top: 5px;
-	}
-	.top-bar .top-bar-content .main-logo{
-		height: 50px;
-		width: auto;
-		margin: 20px 0 0 20px;
-		display: inline-block;
-	}
-	.top-bar .top-bar-content .main-logo .logo-piece{
-		fill: #ffffff;
-		-webkit-transition: fill 0.1s ease-in;
-		-moz-transition: fill 0.1s ease-in;
-		-o-transition: fill 0.1s ease-in;
-		transition: fill 0.1s ease-in;
-	}
-	.top-bar .top-bar-content .main-logo:hover .logo-piece{
-		fill: #9b59b6;
-	}
-	.top-bar .top-bar-content .main-logo img{
-		height: 100%;
-	}
-
-	.top-bar .top-bar-content .side-menu{
-		height: 75px;
-		width: auto;
-		display: inline-block;
-		float: right;
-		padding-right: 5px;
-	}
-	.top-bar .top-bar-content .side-menu .menu-options{
-		width: 60px;
-		height: 60px;
-		display: inline-block;
-		margin: 0 5px;
-		position: relative;
-		vertical-align: middle;
-		top: 12px;
-	}
-	.top-bar .top-bar-content .side-menu .menu-routes{
-		width: auto;
-		display: inline-block;
-	}
-	.top-bar .top-bar-content .side-menu .menu-routes ul li{
-		list-style: none;
-		display: inline;
-		font-size: 1.1em;
-		color: #fff;
-		margin: 0 10px;
-		line-height: 60px;
-		font-family: 'Bree Th';
-	}
-	.top-bar .top-bar-content .side-menu .menu-routes ul li:hover{
-		color: #9b59b6;
-	}
-	.top-bar .top-bar-content .side-menu .search-icon{
-		padding-top: 15px;
-	}
-	.top-bar .top-bar-content .side-menu .search-icon svg{
-		display: block;
-		margin: auto;
-	}
-	.top-bar .top-bar-content .side-menu .search-icon .search-icon-piece{
-		stroke: #ffffff;
-		-webkit-transition: stroke 0.1s ease-in;
-		-moz-transition: stroke 0.1s ease-in;
-		-o-transition: stroke 0.1s ease-in;
-		transition: stroke 0.1s ease-in;
-	}
-	.top-bar .top-bar-content .side-menu .search-icon:hover .search-icon-piece{
-		stroke: #9b59b6;
-	}
-	.top-bar .top-bar-content .side-menu .menu-options.main-menu-icon span{
-		display: block;
-		width: 70%;
-		height: 2px;
-		background: #ffffff;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 6px;
-		-webkit-transition: background 0.1s ease-in;
-		-moz-transition: background 0.1s ease-in;
-		-o-transition: background 0.1s ease-in;
-		transition: background 0.1s ease-in;
-	}
-
-	.top-bar .top-bar-content .side-menu .menu-options.main-menu-icon:hover span{
-		background: #9b59b6;
-	}
-
-	.top-bar .top-bar-content .side-menu .menu-options.main-menu-icon span:first-of-type{
-		margin-top: 20px;
-	}
-</style>
-<div class="top-bar">
+<div class="top-bar static">
 	<hr class="soft-line">
 	<div class="top-bar-content">
 		<div class="main-logo">
@@ -139,15 +8,15 @@
 			</a>
 		</div>
 		<div class="side-menu">
-			<div class="menu-routes menu-options">
+			<nav class="menu-routes menu-options">
 				<ul>
 					<li><a href="/sobre" >Sobre</a></li>
 					<li><a href="/pagamento" >Pagamento</a></li>
 					<li><a href="/contato" >Contato</a></li>
 				</ul>
-			</div>
-			<div class="search-icon menu-options">
-					<!-- Generator: Adobe Illustrator 17.0.1, SVG Export Plug-In  -->
+			</nav>
+			<div class="search-icon menu-options icon">
+				<!-- Generator: Adobe Illustrator 17.0.1, SVG Export Plug-In  -->
 				<svg version="1.1"
 					xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
 					x="0px" y="0px" width="31.017px" height="32.382px" viewBox="0 0 31.017 32.382" enable-background="new 0 0 31.017 32.382"
@@ -160,8 +29,11 @@
 						<line class="search-icon-piece" fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="21.372" y1="22.737" x2="29.517" y2="30.882"/>
 					</g>
 				</svg>
+				<div class="search-input-box">
+					<input type="text" class="general-search" name="general-search">
+				</div>
 			</div>
-			<div class="main-menu-icon menu-options">
+			<div class="main-menu-icon menu-options icon">
 				<span></span>
 				<span></span>
 				<span></span>

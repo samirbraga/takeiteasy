@@ -1,7 +1,13 @@
-var backgroundUrls = ['designers.jpg', 'livros.jpg', 'planta.jpg', 'redacao.jpg', 'software.jpg', 'apresentacao.jpg', 'design-palettes.jpg'];
+var backgroundUrls = ['designers.jpg', 'livros.jpg', 'ilustracao.jpg', 'escrita.jpg', 'software.jpg', 'apresentacao.jpg', 'design-palettes.jpg'];
 
 $(document).ready(function(){
-	var mainServices = $('.main-services');/*
+	var mainServices = $('.main-services');
+	var introduce = $('.introduce');
+	var topBar = $('.top-bar');
+	var tbMenuRoutes = $('.top-bar .side-menu .menu-routes');
+	var generalSearch = $('.top-bar .side-menu .search-icon .search-input-box');
+	var generalSearchInput = $('.top-bar .side-menu .search-icon .search-input-box input');
+	/*
 	services.forEach(function(service){
 		var serviceDiv = $('<div class="service" ></div>');
 		var img = $('<div class="service-image"></div>');
@@ -11,18 +17,34 @@ $(document).ready(function(){
 		serviceDiv.append(img);
 		serviceDiv.append(title);
 		mainServices.append(serviceDiv);
-	});*/
+	});
+	*/
+	
+	// Sequence services fade-in 
 	function fadeInServices(){
 		$('.service').each(function(i){
 			$(this).delay((+i+1)*100).fadeTo('slow', 1);
 		});
 	}
-/*	$('.introduce p').animate({
-		left: '-2px'
-	}, 2000);
 
-	$('.introduce p').fadeTo(0, 1);*/
+	// Fade-in Slogan
+	function fadeInSlogan(){
+		var slogan = [$('.introduce p span').eq(0), $('.introduce p span').eq(1)];
+		slogan[0].fadeTo(300, 1, function () {
+			slogan[1].delay(400).fadeTo(1000, 1);
+		})
+	}
 
+	// Animate height in section.introduce
+	setTimeout(function(){
+		introduce.css('height', 'calc(100vh - 100px)');
+		setTimeout(function(){
+			introduce.css('min-height', '300px');
+			fadeInSlogan();
+		}, 800)
+	}, 200)
+
+	// Infinite slide loop
 	function passSlide(){
 		var bg1 = $('#introduce-background1');
 		var bg2 = $('#introduce-background2');
@@ -40,8 +62,8 @@ $(document).ready(function(){
 		}
 
 		function fadeOut(){
-			bg1.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[index]) + '")';
-			bg2.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[increaseIndex()]) + '")';
+			bg1.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[index] + '")');
+			bg2.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[increaseIndex()] + '")');
 			bg1.css('z-index', 10);
 			bg2.css('z-index', 5);
 			bg2.show();
@@ -50,8 +72,8 @@ $(document).ready(function(){
 			}, delay);
 		}
 		function fadeIn(){
-			bg2.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[index]) + '")';
-			bg1.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[increaseIndex()]) + '")';
+			bg2.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[index] + '")');
+			bg1.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[increaseIndex()] + '")');
 			bg1.css('z-index', 5);
 			bg2.css('z-index', 10);
 			bg1.show();
@@ -61,29 +83,44 @@ $(document).ready(function(){
 		}
 		fadeOut();
 	}
-
-
 	passSlide();
 
+	// Change slogn opacity with scroll
 	$(document).on('scroll', function(){
 	 	var max = 1;
-	 	var opacity = max * (1 - $(this).scrollTop()*1.5 / $('.introduce').height()); 
+	 	var opacity = max * (1 - $(this).scrollTop()*1.5 / introduce.height()); 
 	 	$('.introduce p').css('opacity', opacity);
+
+	 	if($(this).scrollTop() > topBar.height()){
+	 		if($(this).scrollTop() > introduce.height()){
+	 			topBar.removeClass('static');
+	 			topBar.addClass('fixed');
+	 			topBar.css('transform', 'translateY(0)')
+	 		}else{
+	 			topBar.css('transform', 'translateY(-300px)')
+	 		}
+	 	}else{
+	 		topBar.removeClass('fixed');
+	 		topBar.addClass('static');
+	 		topBar.css('transform', 'translateY(0)')
+	 	}
 	});
 
-	/*
-	$('.service').on('mouseenter', function(e){
-		e.preventDefault();
-		$('.service').stop().fadeTo('fast', 0.4);
-		$(this).stop().fadeTo('fast', 1);
-		$('.service').on('mouseleave', function(evt){
-			evt.preventDefault();
-			$('.service').fadeTo('fast', 1);
-		});
-	});*/
-	$(document).scroll(function(){
+	// Show search input box
+	$('.search-icon').click(function () {
+		tbMenuRoutes.fadeTo('fast', 0, function(){
+			generalSearch.css('width', '300px');
+			generalSearchInput.delay(200).focus();
+			generalSearchInput.on('blur', function(){
+				generalSearch.css('width', '0');
+				tbMenuRoutes.delay(200).fadeTo('fast', 1)
+			})
+		})
+	})
+
+	/*$(document).scroll(function(){
 		if(document.body.scrollTop >= mainServices.offset().top-200){
 			fadeInServices()
 		}
-	})
+	});*/
 });

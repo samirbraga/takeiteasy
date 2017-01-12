@@ -6,8 +6,18 @@
 	outline: none;
 	box-sizing: border-box
 }
+*::selection {
+  background: #a66bbe; 
+  color: #fff;
+}
+*::-moz-selection {
+  background: #a66bbe;
+  color: #fff;
+
+}
 body{
 	background: #fbfcfd;
+	overflow-x: hidden;
 }
 a{
 	text-decoration: none;
@@ -18,13 +28,18 @@ a{
 }
 .introduce{
 	width: 100%;
-	height: calc(100vh - 100px);
-	min-height: 300px;
+	height: 0;
+	overflow: hidden;
+	will-change: height;
 	background: #34495e;
 	background: -webkit-linear-gradient(to left, #2c3e50 , #11181f);
 	background: linear-gradient(to left, #2c3e50 , #11181f);
 	padding: 20px 30px;
 	position: relative;
+	-webkit-transition: height 0.5s ease-in-out;
+	-moz-transition: height 0.5s ease-in-out;
+	-o-transition: height 0.5s ease-in-out;
+	transition: height 0.5s ease-in-out;
 }
 /* .introduce:before{
 	content: '';
@@ -48,14 +63,12 @@ a{
 	display: block;
 	position: relative;
 	top: 50%;
-	will-change: opacity;
-	opacity: 1;
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
 	margin-top: -10px;
-	font-size: 5vmin;
+	font-size: 2.5vw;
 	color: #fff;
 	font-family: 'Bree Th';
     font-style: oblique;
@@ -64,6 +77,20 @@ a{
     line-height: 50px;
     text-align: center;
     z-index: 100;
+}
+@media (max-width: 900px){
+	.introduce p{
+		font-size: 3vw;
+	}
+}
+@media (max-width: 600px){
+	.introduce p{
+		font-size: 3.5vw;
+	}
+}
+.introduce span{
+	will-change: opacity;
+	opacity: 0;
 }
 .introduce .top-gradient{
 	position: absolute;
@@ -101,6 +128,7 @@ a{
 	position: absolute;
 	top: 0;
 	left: 0;
+	will-change: opacity;
 	opacity: 1;
 	-webkit-transition: background-size 1s ease-in;
 	-moz-transition: background-size 1s ease-in;
@@ -180,6 +208,7 @@ a{
 	box-shadow: 0 0 0 2px white;
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
 	-o-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 	background: #fff;
@@ -191,7 +220,7 @@ a{
 }
 .section-title{
 	font-family: 'Bree Th';
-	font-style: oblique;
+	font-style: normal;
 	font-size: 1.5em;
 	line-height: 100px;
 	text-align: center;
@@ -206,7 +235,7 @@ a{
 	height: 1px;
 	width: 30%;
 	margin: auto;
-	background: cornflowerblue;
+	background: #9b59b6;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);
@@ -214,6 +243,7 @@ a{
 	transform: translateX(-50%);
 	bottom: -15px;
 }
+/*
 .main-services{
 	width: 100%;
 	padding: 20px; 
@@ -336,6 +366,8 @@ a{
     color: #9b59b6;
     margin: auto;
 }
+*/
+
 
 footer.main-footer{
 	height: 400px;
