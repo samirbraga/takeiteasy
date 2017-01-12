@@ -7,7 +7,7 @@
 	box-sizing: border-box
 }
 body{
-	background: #fff;
+	background: #fbfcfd;
 }
 a{
 	text-decoration: none;
@@ -48,21 +48,88 @@ a{
 	display: block;
 	position: relative;
 	top: 50%;
-	left: -300px;
 	will-change: opacity;
-	opacity: 0;
+	opacity: 1;
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
 	margin-top: -10px;
-	font-size: 4vmin;
+	font-size: 5vmin;
 	color: #fff;
 	font-family: 'Bree Th';
     font-style: oblique;
     font-weight: bold;
-    text-shadow: 3px 3px 0 rgba(0,0,0,.2);
-    line-height: 60px;
+    text-shadow: 0 0 10px rgba(0,0,0,.8);
+    line-height: 50px;
+    text-align: center;
+    z-index: 100;
+}
+.introduce .top-gradient{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+    z-index: 20;
+	background: rgba(0,0,0,0);
+	background: -webkit-linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.0));
+	background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.0));
+}
+
+.introduce .introduce-background-overlay{
+	width: 100%;
+	height: 100%;
+	background: #34495e;
+	background: -webkit-linear-gradient(to left, #2c3e50 , #11181f);
+	background: linear-gradient(to left, #2c3e50 , #11181f);
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.3;
+	mix-blend-mode: multiply;
+	z-index: 20;
+}
+
+.introduce .introduce-background{
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right;
+	background-attachment: fixed;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 1;
+	-webkit-transition: background-size 1s ease-in;
+	-moz-transition: background-size 1s ease-in;
+	-o-transition: background-size 1s ease-in;
+	transition: background-size 1s ease-in;
+}
+
+.section-divider{
+	width: 60%;
+	height: 1px;
+	background: #b07cc5;
+	margin: 20px auto; 
+	position: relative;
+}
+.section-divider:after{
+	content: '' ;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	border: 2px solid #9b59b6;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	box-shadow: 0 0 0 2px white;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background: #fff;
 }
 
 .page header{
@@ -167,7 +234,7 @@ a{
 	content: '';
 	width: 50%;
 	height: 1px;
-	background: #c49dd4;
+	background: #dac1e4;
 	position: absolute;
 	bottom: 0;
 	left: 50%;
@@ -181,7 +248,7 @@ a{
 	height: 50%;
 	width: 1px;
     margin: auto;
-	background: #c49dd4;
+	background: #dac1e4;
 	position: absolute;
 	right: 0;
 	top: 50%;
