@@ -63,8 +63,8 @@ $(document).ready(function(){
 		}
 
 		function fadeOut(){
-			bg1.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[index] + '")');
-			bg2.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[increaseIndex()] + '")');
+			bg1.css('background-image', 'url("/public/images/welcome-slide/optimized/' + backgroundUrls[index] + '")');
+			bg2.css('background-image', 'url("/public/images/welcome-slide/optimized/' + backgroundUrls[increaseIndex()] + '")');
 			bg1.css('z-index', 10);
 			bg2.css('z-index', 5);
 			bg2.show();
@@ -73,8 +73,8 @@ $(document).ready(function(){
 			}, delay);
 		}
 		function fadeIn(){
-			bg2.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[index] + '")');
-			bg1.css('background-image', 'url("/public/images/welcome-slide/' + backgroundUrls[increaseIndex()] + '")');
+			bg2.css('background-image', 'url("/public/images/welcome-slide/optimized/' + backgroundUrls[index] + '")');
+			bg1.css('background-image', 'url("/public/images/welcome-slide/optimized/' + backgroundUrls[increaseIndex()] + '")');
 			bg1.css('z-index', 5);
 			bg2.css('z-index', 10);
 			bg1.show();
