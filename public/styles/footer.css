@@ -1,0 +1,47 @@
+footer.main-footer{
+	height: auto;
+	min-height: 600px;
+	width: 100%;
+	position: relative;
+	background: #9b59b6;
+	background: -webkit-linear-gradient(to left, #612e76 , #34193f);
+	background: linear-gradient(to left, #612e76 , #34193f);
+}
+footer.main-footer:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100px;
+	width: 100%;
+	background: url('/public/images/wave-footer-background-overlay.png') no-repeat;
+	background-size: 100% 100%;
+	background-position: top;
+}
+
+footer.main-footer footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100px;
+	width: 100%;
+}
+footer.main-footer footer figure{
+	display: inline-block;
+	position: relative;
+	margin: auto;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+footer.main-footer footer figure .logo-piece{ 
+	fill: rgba(255, 255, 255, 0.18);
+}
+@media (max-width: 800px){
+	footer.main-footer:after{
+		content: '';
+		background-size: 100% 70%;
+	}
+}

@@ -37,7 +37,8 @@ $(document).ready(function(){
 
 	// Animate height in section.introduce
 	setTimeout(function(){
-		introduce.css('height', 'calc(100vh - 100px)');
+		introduce.removeClass('shrunken');
+		introduce.addClass('expanded');
 		setTimeout(function(){
 			introduce.css('min-height', '300px');
 			fadeInSlogan();
@@ -108,14 +109,14 @@ $(document).ready(function(){
 
 	// Show search input box
 	$('.search-icon').click(function () {
-		tbMenuRoutes.fadeTo('fast', 0, function(){
+		tbMenuRoutes.stop().fadeTo('fast', 0, function(){
 			generalSearch.css('width', '300px');
-			generalSearchInput.delay(200).focus();
-			generalSearchInput.on('blur', function(){
-				generalSearch.css('width', '0');
-				tbMenuRoutes.delay(200).fadeTo('fast', 1)
-			})
+			generalSearchInput.focus();
 		})
+	});
+	generalSearchInput.on('blur', function(){
+		generalSearch.css('width', '0');
+		tbMenuRoutes.delay(200).fadeTo('fast', 1)
 	})
 
 	/*$(document).scroll(function(){
