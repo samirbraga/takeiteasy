@@ -7,6 +7,14 @@ $(document).ready(function(){
 	var tbMenuRoutes = $('.top-bar .side-menu .menu-routes');
 	var generalSearch = $('.top-bar .side-menu .search-icon .search-input-box');
 	var generalSearchInput = $('.top-bar .side-menu .search-icon .search-input-box input');
+	var makeYouRelax = {
+		header: $('.make-you-relax header'),
+		article: $('.make-you-relax article'),
+		areaDesign: $('.make-you-relax .services-area .service-area:eq(0)'),
+		areaSoftware: $('.make-you-relax .services-area .service-area:eq(1)'),
+		areaAcademy: $('.make-you-relax .services-area .service-area:eq(2)')
+	}
+
 	/*
 	services.forEach(function(service){
 		var serviceDiv = $('<div class="service" ></div>');
@@ -30,8 +38,8 @@ $(document).ready(function(){
 	// Fade-in Slogan
 	function fadeInSlogan(){
 		var slogan = [$('.introduce p span').eq(0), $('.introduce p span').eq(1)];
-		slogan[0].fadeTo(300, 1, function () {
-			slogan[1].delay(400).fadeTo(1000, 1);
+		slogan[0].fadeTo(500, 1, function () {
+			slogan[1].delay(500).fadeTo(1000, 1);
 		})
 	}
 
@@ -42,7 +50,7 @@ $(document).ready(function(){
 		setTimeout(function(){
 			introduce.css('min-height', '300px');
 			fadeInSlogan();
-		}, 800)
+		}, 1200)
 	}, 200)
 
 	// Infinite slide loop
@@ -86,14 +94,22 @@ $(document).ready(function(){
 	}
 	passSlide();
 
+		
+	var lastScrollTop = $(this).scrollTop(); // use to detect direction of scroll
+
 	// Change slogn opacity with scroll
 	$(document).on('scroll', function(){
+		// Change opacity of slogan by scroll
 	 	var max = 1;
 	 	var opacity = max * (1 - $(this).scrollTop()*1.5 / introduce.height()); 
 	 	$('.introduce p').css('opacity', opacity);
 
-	 	if($(this).scrollTop() > topBar.height()){
-	 		if($(this).scrollTop() > introduce.height()){
+	 	// Show topbar by scroll
+	 	showTopbarByScroll();
+
+		var st = $(this).scrollTop();
+		if(st > topBar.height()){
+	 		if(st > introduce.height()-300 && st < lastScrollTop){
 	 			topBar.removeClass('static');
 	 			topBar.addClass('fixed');
 	 			topBar.css('transform', 'translateY(0)')
@@ -105,7 +121,38 @@ $(document).ready(function(){
 	 		topBar.addClass('static');
 	 		topBar.css('transform', 'translateY(0)')
 	 	}
+		lastScrollTop = st;
+
+		if(st > makeYouRelax.header.offset().top){
+			makeYouRelax.areaAcademy.addClass('showed');
+			makeYouRelax.areaAcademy.fadeTo('slow', 1);
+			setTimeout(function(){
+				makeYouRelax.areaSoftware.addClass('showed');
+				makeYouRelax.areaSoftware.fadeTo('slow', 1);
+			}, 300)
+			setTimeout(function(){
+				makeYouRelax.areaDesign.addClass('showed');
+				makeYouRelax.areaDesign.fadeTo('slow', 1);
+			}, 600)
+		}
 	});
+
+	function showTopbarByScroll(){
+		if($(this).scrollTop() > topBar.height()){
+	 		if($(this).scrollTop() > introduce.height()-300){
+	 			topBar.removeClass('static');
+	 			topBar.addClass('fixed');
+	 			topBar.css('transform', 'translateY(0)')
+	 		}else{
+	 			topBar.css('transform', 'translateY(-300px)')
+	 		}
+	 	}else{
+	 		topBar.removeClass('fixed');
+	 		topBar.addClass('static');
+	 		topBar.css('transform', 'translateY(0)')
+	 	}
+	}
+	//showTopbarByScroll();
 
 	// Show search input box
 	$('.search-icon').click(function () {
