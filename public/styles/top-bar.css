@@ -1,26 +1,27 @@
 .top-bar{
 	width: 100%;
-	height: 90px;
 	top: 0;
 	left: 0;
 	z-index: 100;	
 	will-change: transform;
+	-webkit-transition: background-color 0.5s ease; 
+	-moz-transition: background-color 0.5s ease; 
+	-o-transition: background-color 0.5s ease; 
+	transition: background-color 0.5s ease;
 }
 .top-bar.static{
 	position: absolute;
 	background: transparent;
+	height: 90px;
 }
 .top-bar.fixed{
+	height: 90px;
 	position: fixed;
-	background: #fbfcfd;
+	background: #fbfcfd;/* 
 	-webkit-transform: translateY(-90px); 
 	-moz-transform: translateY(-90px); 
 	-o-transform: translateY(-90px); 
-	transform: translateY(-90px); 
-	-webkit-transition: transform 0.5s ease-out; 
-	-moz-transition: transform 0.5s ease-out; 
-	-o-transition: transform 0.5s ease-out; 
-	transition: transform 0.5s ease-out;
+	transform: translateY(-90px);  */
 	-webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,0.1);
 	-moz-box-shadow: 0 0 4px 0 rgba(0,0,0,0.1);
 	-o-box-shadow: 0 0 4px 0 rgba(0,0,0,0.1);

@@ -123,21 +123,13 @@ $(document).ready(function(){
 	 	$('.introduce p').css('opacity', opacity);
 
 	 	// Show topbar by scroll
-	 	showTopbarByScroll();
-
 		var st = $(this).scrollTop();
-		if(st > topBar.height()){
-	 		if(st > introduce.height()-300 && st < lastScrollTop){
-	 			topBar.removeClass('static');
-	 			topBar.addClass('fixed');
-	 			topBar.css('transform', 'translateY(0)')
-	 		}else{
-	 			topBar.css('transform', 'translateY(-300px)')
-	 		}
+		if(st > 0){
+ 			topBar.removeClass('static');
+ 			topBar.addClass('fixed');
 	 	}else{
 	 		topBar.removeClass('fixed');
 	 		topBar.addClass('static');
-	 		topBar.css('transform', 'translateY(0)')
 	 	}
 		lastScrollTop = st;
 
@@ -145,23 +137,6 @@ $(document).ready(function(){
 			showServiceAreas();
 		}
 	});
-
-	function showTopbarByScroll(){
-		if($(this).scrollTop() > topBar.height()){
-	 		if($(this).scrollTop() > introduce.height()-300){
-	 			topBar.removeClass('static');
-	 			topBar.addClass('fixed');
-	 			topBar.css('transform', 'translateY(0)')
-	 		}else{
-	 			topBar.css('transform', 'translateY(-300px)')
-	 		}
-	 	}else{
-	 		topBar.removeClass('fixed');
-	 		topBar.addClass('static');
-	 		topBar.css('transform', 'translateY(0)')
-	 	}
-	}
-	//showTopbarByScroll();
 
 	// Show search input box
 	$('.search-icon').click(function () {
@@ -179,17 +154,17 @@ $(document).ready(function(){
 	makeYouRelax.areaDesign.click(function(){
 		toScroll.animate({
 			scrollTop: areaExplain.design.offset().top 
-		}, 500)
+		}, 800)
 	})
 	makeYouRelax.areaSoftware.click(function(){
 		toScroll.animate({
 			scrollTop: areaExplain.software.offset().top 
-		}, 500)
+		}, 800)
 	})
 	makeYouRelax.areaAcademy.click(function(){
 		toScroll.animate({
 			scrollTop: areaExplain.academy.offset().top 
-		}, 500)
+		}, 800)
 	})
 
 	/*$(document).scroll(function(){

@@ -29,6 +29,38 @@ a{
 h1{
 	text-transform: uppercase;
 }
+
+/* general clases */
+
+.center-horizontally{
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.center-vertically{
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.flex{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+.flex-center-horizontally{
+	justify-content: center;
+}
+.flex-center-vertically{
+	align-items: center;
+}
+
+
 .page{
 	margin-bottom: 300px;
 }
@@ -36,7 +68,7 @@ h1{
 .introduce{
 	width: 100%;
 	height: 0;
-	 /* height: calc(100vh - 50px);  */
+	height: calc(100vh - 50px);
 	overflow: hidden;
 	background: #34495e;
 	background: -webkit-linear-gradient(to left, #2c3e50 , #11181f);
@@ -337,19 +369,22 @@ h1{
 
 .area-explain{ 
 	width: 100%;
-	height: 150vh;
+	height: calc(100vh + 100px);
 	min-height: 500px;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: repeat;
 }
 .area-explain header{ 
 	position: relative;
 	width: 100%;
-	height: 30%;
+	height: 50%;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 	background-repeat: repeat;
 	padding: 5% 0;
-	border-top: 4px solid;
 }
 .area-explain header:after{ 
 	content: '';
@@ -365,50 +400,84 @@ h1{
 	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
+/* 
 .area-explain.dark header{ 
 	border-top-color: #2c3e50;
 }
 .area-explain.light header{ 
 	border-top-color: #ffffff;
-}
-.area-explain.dark header:after{ 
-	border-bottom-color: #2c3e50;
-}
-.area-explain.light header:after{ 
-	border-bottom-color: #fbfcfd;
-}
+} 
+*/
 .area-explain article{ 
 	width: 100%;
-	height: 70%;
+	height: 50%;
 	padding: 10px;
 }
 .area-explain.light article{ 
 	background: transparent;
 }
 .area-explain.dark article{
-	background: #2c3e50;
+	/* background: #2c3e50; */
 }
 .area-explain article .full-explain{ 
 	width: 90%;
 	max-width: 900px;
-	height: 50%;
+	height: auto;
 	margin: auto;
+	background: rgba(0, 0, 0, 0.6);
+	padding: 20px;
 }
-.area-explain article .full-explain p{ 
-	font-family: 'Roboto', sans-serif;
+.area-explain article .full-explain .explain-text{
 	display: inline-block;
-	width: calc(100% - 300px);
+	width: calc(100% - 200px);
+	position: relative;
+	padding-right: 20px;
+	font-family: 'Roboto', sans-serif;
 }
-.area-explain.dark article .full-explain p{ 
+.area-explain.dark article .full-explain .explain-text{
 	color: #fff;
 }
-.area-explain.light article .full-explain p{
-	color: #2c3e50;
+.area-explain.light article .full-explain .explain-text{
+	color: #000;
+}
+.area-explain article .full-explain .explain-text:after{
+	content: '';
+	height: 80%;
+	width: 1px;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.area-explain.dark article .full-explain .explain-text:after{
+	background: rgba(255,255,255,0.6);
+}
+.area-explain.light article .full-explain .explain-text:after{
+	background: rgba(0,0,0,0.6);
+}
+
+.area-explain.light article .full-explain{
+	background: rgba(255,255,255,0.6);
+}
+.area-explain article .full-explain .explain-text h2{ 
+	margin-bottom: 5px;
+}
+.area-explain.dark article .full-explain .explain-text p{ 
+	color: #ffffff;
+}
+.area-explain.light article .full-explain .explain-text p{
+	color: #000000;
 }
 .area-explain article .full-explain .explain-read-more{ 
+	position: relative;
 	padding: 15px;
-	border: 1px solid #fff;
-	color: #fff;
+	border: 1px solid #ffffff;
+	width: 160px;
+	color: #ffffff;
+	font-size: 0.8em;
 	font-family: 'Century Gothic';
 	text-transform: uppercase;
 	-webkit-transition: background 0.2s ease-in, border-color 0.2s ease-in;
@@ -417,10 +486,11 @@ h1{
 	transition: background 0.2s ease-in, border-color 0.2s ease-in;
 	display: inline-block;
 	margin: 10px 15px;
+	text-align: center;
 }
 .area-explain.light article .full-explain .explain-read-more{
-	border: 1px solid #2c3e50;
-	color: #2c3e50;
+	border: 1px solid #000000;
+	color: #000000;
 }
 .area-explain.dark article .full-explain .explain-read-more{
 	border: 1px solid #ffffff;
@@ -428,22 +498,22 @@ h1{
 }
 .area-explain.dark article .full-explain .explain-read-more:hover{ 
 	border: 1px solid #ffffff;
-	color: #2c3e50;
+	color: #000000;
 	background: #ffffff;
 }
 .area-explain.light article .full-explain .explain-read-more:hover{ 
-	border: 1px solid #2c3e50;
+	border: 1px solid #000000;
 	color: #ffffff;
-	background: #2c3e50;
+	background: #000000;
 }
 
-.design-area-explain header{
-	background-image: url("/public/images/explain-backgrounds/design.png");
+.design-area-explain{
+	background-image: url("/public/images/explain-backgrounds/design.jpg");
 }
-.software-area-explain header{
+.software-area-explain{
 	background-image: url("/public/images/explain-backgrounds/software.jpg");
 }
-.academy-area-explain header{
+.academy-area-explain{
 	background-image: url("/public/images/explain-backgrounds/academy.jpg");
 }
 
@@ -454,14 +524,31 @@ h1{
 	text-align: center;
 	text-shadow: 0 0 10px rgba(0,0,0,.5);
 	line-height: 0.4em;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
 }
 
 .section-title-explain hr{ 
 	height: 1px;
 	background: #fff;
 	width: 20%;
-	min-width: 100px;
+	min-width: 150px;
 	margin: 50px auto 20px auto;
+	position: relative;
+}
+.section-title-explain hr:after{ 
+	content: '';
+	height: 8px;
+	width: 8px;
+	background: #ffffff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	transform: translateX(-50%) translateY(-50%) rotate(45deg);
 }
 
 .section-subtitle-explain{ 
@@ -471,6 +558,7 @@ h1{
 	text-align: center;
 	text-shadow: 0 0 10px rgba(0,0,0,.8);
 	margin-top: 10px;
+	display: none;
 }
 
 /*
