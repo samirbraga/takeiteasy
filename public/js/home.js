@@ -14,7 +14,11 @@ $(document).ready(function(){
 		areaSoftware: $('.make-you-relax .services-area .service-area:eq(1)'),
 		areaAcademy: $('.make-you-relax .services-area .service-area:eq(2)')
 	}
-
+	var areaExplain = {
+		design: $('.design-area-explain'),
+		software: $('.software-area-explain'),
+		academy: $('.academy-area-explain')
+	}
 	/*
 	services.forEach(function(service){
 		var serviceDiv = $('<div class="service" ></div>');
@@ -93,15 +97,29 @@ $(document).ready(function(){
 		fadeOut();
 	}
 	passSlide();
+	
 
-		
+	// Show Service Areas
+	function showServiceAreas() {
+		makeYouRelax.areaAcademy.addClass('showed');
+		makeYouRelax.areaAcademy.fadeTo('slow', 1);
+		setTimeout(function(){
+			makeYouRelax.areaSoftware.addClass('showed');
+			makeYouRelax.areaSoftware.fadeTo('slow', 1);
+		}, 300)
+		setTimeout(function(){
+			makeYouRelax.areaDesign.addClass('showed');
+			makeYouRelax.areaDesign.fadeTo('slow', 1);
+		}, 600)
+	}
+
 	var lastScrollTop = $(this).scrollTop(); // use to detect direction of scroll
 
 	// Change slogn opacity with scroll
 	$(document).on('scroll', function(){
 		// Change opacity of slogan by scroll
 	 	var max = 1;
-	 	var opacity = max * (1 - $(this).scrollTop()*1.5 / introduce.height()); 
+	 	var opacity = max * (1 - $(this).scrollTop()*1.8 / introduce.height()); 
 	 	$('.introduce p').css('opacity', opacity);
 
 	 	// Show topbar by scroll
@@ -123,17 +141,8 @@ $(document).ready(function(){
 	 	}
 		lastScrollTop = st;
 
-		if(st > makeYouRelax.header.offset().top){
-			makeYouRelax.areaAcademy.addClass('showed');
-			makeYouRelax.areaAcademy.fadeTo('slow', 1);
-			setTimeout(function(){
-				makeYouRelax.areaSoftware.addClass('showed');
-				makeYouRelax.areaSoftware.fadeTo('slow', 1);
-			}, 300)
-			setTimeout(function(){
-				makeYouRelax.areaDesign.addClass('showed');
-				makeYouRelax.areaDesign.fadeTo('slow', 1);
-			}, 600)
+		if(st > makeYouRelax.header.offset().top - 100){
+			showServiceAreas();
 		}
 	});
 
@@ -164,6 +173,23 @@ $(document).ready(function(){
 	generalSearchInput.on('blur', function(){
 		generalSearch.css('width', '0');
 		tbMenuRoutes.delay(200).fadeTo('fast', 1)
+	})
+
+	var toScroll = $('html, body');
+	makeYouRelax.areaDesign.click(function(){
+		toScroll.animate({
+			scrollTop: areaExplain.design.offset().top 
+		}, 500)
+	})
+	makeYouRelax.areaSoftware.click(function(){
+		toScroll.animate({
+			scrollTop: areaExplain.software.offset().top 
+		}, 500)
+	})
+	makeYouRelax.areaAcademy.click(function(){
+		toScroll.animate({
+			scrollTop: areaExplain.academy.offset().top 
+		}, 500)
 	})
 
 	/*$(document).scroll(function(){

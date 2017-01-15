@@ -35,8 +35,8 @@ h1{
 
 .introduce{
 	width: 100%;
-	/* height: calc(100vh - 50px); */
 	height: 0;
+	 height: calc(100vh - 50px); 
 	overflow: hidden;
 	background: #34495e;
 	background: -webkit-linear-gradient(to left, #2c3e50 , #11181f);
@@ -94,7 +94,7 @@ h1{
     text-shadow: 0 0 10px rgba(0,0,0,.6);
     line-height: 50px;
     text-align: center;
-    z-index: 100;
+    z-index: 20;
 }
 @media (max-width: 900px){
 	.introduce p{
@@ -299,7 +299,6 @@ h1{
 	height: auto;
 	width: 30%;
 	max-width: 300px;
-/* 	border: 1px solid #333; */
 	will-change: transform, opacity;
 	opacity: 0;
 	display: inline-block;
@@ -324,7 +323,7 @@ h1{
 	transform: translateX(0);
 }
 .make-you-relax .services-area .service-area figure img{ 
-	width: 90%;
+	width: 80%;
 }
 
 .make-you-relax .services-area .service-area span{ 
@@ -336,21 +335,142 @@ h1{
 	margin: 10px auto;
 }
 
-.design-area-explain{ 
+.area-explain{ 
 	width: 100%;
-	height: 70vh;
-	min-height: 300px;
-	background: url("/public/images/explain-backgrounds/design.png") no-repeat;
+	height: 150vh;
+	min-height: 500px;
+}
+.area-explain header{ 
+	position: relative;
+	width: 100%;
+	height: 30%;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
+	background-repeat: repeat;
+	padding: 5% 0;
+	border-top: 4px solid;
 }
+.area-explain header:after{ 
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 30px solid transparent;
+	bottom: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.area-explain.dark header{ 
+	border-top-color: #2c3e50;
+}
+.area-explain.light header{ 
+	border-top-color: #ffffff;
+}
+.area-explain.dark header:after{ 
+	border-bottom-color: #2c3e50;
+}
+.area-explain.light header:after{ 
+	border-bottom-color: #fbfcfd;
+}
+.area-explain article{ 
+	width: 100%;
+	height: 70%;
+	padding: 10px;
+}
+.area-explain.light article{ 
+	background: transparent;
+}
+.area-explain.dark article{
+	background: #2c3e50;
+}
+.area-explain article .full-explain{ 
+	width: 90%;
+	max-width: 900px;
+	height: 50%;
+	margin: auto;
+}
+.area-explain article .full-explain p{ 
+	font-family: 'Roboto', sans-serif;
+	display: inline-block;
+	width: calc(100% - 300px);
+}
+.area-explain.dark article .full-explain p{ 
+	color: #fff;
+}
+.area-explain.light article .full-explain p{
+	color: #2c3e50;
+}
+.area-explain article .full-explain .explain-read-more{ 
+	padding: 15px;
+	border: 1px solid #fff;
+	color: #fff;
+	font-family: 'Century Gothic';
+	text-transform: uppercase;
+	-webkit-transition: background 0.2s ease-in, border-color 0.2s ease-in;
+	-moz-transition: background 0.2s ease-in, border-color 0.2s ease-in;
+	-o-transition: background 0.2s ease-in, border-color 0.2s ease-in;
+	transition: background 0.2s ease-in, border-color 0.2s ease-in;
+	display: inline-block;
+	margin: 10px 15px;
+}
+.area-explain.light article .full-explain .explain-read-more{
+	border: 1px solid #2c3e50;
+	color: #2c3e50;
+}
+.area-explain.dark article .full-explain .explain-read-more{
+	border: 1px solid #ffffff;
+	color: #ffffff;
+}
+.area-explain.dark article .full-explain .explain-read-more:hover{ 
+	border: 1px solid #ffffff;
+	color: #2c3e50;
+	background: #ffffff;
+}
+.area-explain.light article .full-explain .explain-read-more:hover{ 
+	border: 1px solid #2c3e50;
+	color: #ffffff;
+	background: #2c3e50;
+}
+
+.design-area-explain header{
+	background-image: url("/public/images/explain-backgrounds/design.png");
+}
+.software-area-explain header{
+	background-image: url("/public/images/explain-backgrounds/software.jpg");
+}
+.academy-area-explain header{
+	background-image: url("/public/images/explain-backgrounds/academy.jpg");
+}
+
 .section-title-explain{ 
 	font-size: 4em;
 	color: #fff;
 	font-family: 'Century Gothic', sans-serif;
 	text-align: center;
-	text-shadow: 0 0 10px rgba(0,0,0,.5)
+	text-shadow: 0 0 10px rgba(0,0,0,.5);
+	line-height: 0.4em;
+}
+
+.section-title-explain hr{ 
+	height: 1px;
+	background: #fff;
+	width: 20%;
+	min-width: 100px;
+	margin: 50px auto 20px auto;
+}
+
+.section-subtitle-explain{ 
+	font-size: 1.8em;
+	color: #fff;
+	font-family: 'Great Vibes', cursive;
+	text-align: center;
+	text-shadow: 0 0 10px rgba(0,0,0,.8);
+	margin-top: 10px;
 }
 
 /*
