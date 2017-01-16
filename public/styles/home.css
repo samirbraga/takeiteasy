@@ -68,7 +68,7 @@ h1{
 .introduce{
 	width: 100%;
 	height: 0;
-	height: calc(100vh - 50px);
+	/* height: calc(100vh - 50px); */
 	overflow: hidden;
 	background: #34495e;
 	background: -webkit-linear-gradient(to left, #2c3e50 , #11181f);
@@ -373,32 +373,59 @@ h1{
 	min-height: 500px;
 	background-size: cover;
 	background-position: center;
-	background-attachment: fixed;
+	background-attachment: scroll;
 	background-repeat: repeat;
+	overflow: hidden;
+	position: relative;
+}
+.area-explain .area-explain-partial{ 
+	position: absolute;
+	top: 0;
+	width: calc(50% - 50px);
+	height: 100%;
+	z-index: 0;
+}
+.area-explain.dark .area-explain-partial{ 
+	right: 0;
+	background: #301342;
+}
+.area-explain.light .area-explain-partial{ 
+	left: 0;
+	background: #e9eff4;
+}
+.area-explain .area-explain-partial:before{ 
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
+.area-explain.dark .area-explain-partial:before{
+	left: -100px;
+	border-width: 0 0 calc(100vh + 100px) 100px;
+	border-color: transparent transparent #301342 transparent;
+}
+.area-explain.light .area-explain-partial:before{
+	right: -100px;
+	border-width: calc(100vh + 100px) 0 0 100px;
+	border-color: transparent transparent transparent #e9eff4;
 }
 .area-explain header{ 
 	position: relative;
+	height: 40%;
 	width: 100%;
-	height: 50%;
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	background-repeat: repeat;
-	padding: 5% 0;
+	z-index: 10;
+	right: 0;
+	float: right;
+	justify-content: flex-end;
+	align-items: flex-end;
 }
-.area-explain header:after{ 
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 0;
-	border: 30px solid transparent;
-	bottom: 0;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	-o-transform: translateX(-50%);
-	transform: translateX(-50%);
+.area-explain.dark header{
+	justify-content: flex-end;
+}
+.area-explain.light header{
+	justify-content: flex-start;
 }
 /* 
 .area-explain.dark header{ 
@@ -410,67 +437,45 @@ h1{
 */
 .area-explain article{ 
 	width: 100%;
-	height: 50%;
-	padding: 10px;
+	height: 60%;
+	z-index: 10;
+}
+.area-explain.dark article{ 
+	padding: 10px 30px 10px 10px;
+	float: right;
 }
 .area-explain.light article{ 
-	background: transparent;
-}
-.area-explain.dark article{
-	/* background: #2c3e50; */
+	padding: 10px 10px 10px 30px;
+	float: left;
 }
 .area-explain article .full-explain{ 
-	width: 90%;
 	max-width: 900px;
 	height: auto;
-	margin: auto;
-	background: rgba(0, 0, 0, 0.6);
-	padding: 20px;
+	margin-top: 10px;
 }
 .area-explain article .full-explain .explain-text{
 	display: inline-block;
-	width: calc(100% - 200px);
 	position: relative;
-	padding-right: 20px;
+	margin: 30px 0;
 	font-family: 'Roboto', sans-serif;
 }
 .area-explain.dark article .full-explain .explain-text{
-	color: #fff;
+	text-align: right;	
+	color: #e9eff4;
 }
 .area-explain.light article .full-explain .explain-text{
-	color: #000;
-}
-.area-explain article .full-explain .explain-text:after{
-	content: '';
-	height: 80%;
-	width: 1px;
-	position: absolute;
-	right: 8px;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
-.area-explain.dark article .full-explain .explain-text:after{
-	background: rgba(255,255,255,0.6);
-}
-.area-explain.light article .full-explain .explain-text:after{
-	background: rgba(0,0,0,0.6);
+	text-align: left;	
+	color: #645472;
 }
 
-.area-explain.light article .full-explain{
-	background: rgba(255,255,255,0.6);
-}
 .area-explain article .full-explain .explain-text h2{ 
-	margin-bottom: 5px;
+	display: block;
+	margin-bottom: 15px;
 }
-.area-explain.dark article .full-explain .explain-text p{ 
-	color: #ffffff;
+.area-explain article .full-explain .explain-text p{ 
+	margin: 15px 0;
 }
-.area-explain.light article .full-explain .explain-text p{
-	color: #000000;
-}
+
 .area-explain article .full-explain .explain-read-more{ 
 	position: relative;
 	padding: 15px;
@@ -485,27 +490,28 @@ h1{
 	-o-transition: background 0.2s ease-in, border-color 0.2s ease-in;
 	transition: background 0.2s ease-in, border-color 0.2s ease-in;
 	display: inline-block;
-	margin: 10px 15px;
 	text-align: center;
 }
 .area-explain.light article .full-explain .explain-read-more{
-	border: 1px solid #000000;
-	color: #000000;
+	border: 1px solid #301342;
+	color: #301342;
+	float: left;
 }
 .area-explain.dark article .full-explain .explain-read-more{
 	border: 1px solid #ffffff;
 	color: #ffffff;
-}
+	float: right;
+} 
 .area-explain.dark article .full-explain .explain-read-more:hover{ 
 	border: 1px solid #ffffff;
-	color: #000000;
+	color: #301342;
 	background: #ffffff;
 }
 .area-explain.light article .full-explain .explain-read-more:hover{ 
-	border: 1px solid #000000;
+	border: 1px solid #301342;
 	color: #ffffff;
-	background: #000000;
-}
+	background: #301342;
+} 
 
 .design-area-explain{
 	background-image: url("/public/images/explain-backgrounds/design.jpg");
@@ -518,37 +524,68 @@ h1{
 }
 
 .section-title-explain{ 
+	position: relative;
 	font-size: 4em;
-	color: #fff;
 	font-family: 'Century Gothic', sans-serif;
-	text-align: center;
-	text-shadow: 0 0 10px rgba(0,0,0,.5);
+	/*text-shadow: 0 0 10px rgba(0,0,0,.5);*/
 	line-height: 0.4em;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
+	margin-bottom: 10px;
+}
+.dark .section-title-explain{ 
+	text-align: right;
+	float: right;
+	padding-right: 30px;
+	color: #fff;
+}
+.light .section-title-explain{ 
+	text-align: left;
+	float: left;
+	padding-left: 30px;
+	color: #301342;
+}
+.section-title-explain br{ 
+	font-size: 0;
 }
 
 .section-title-explain hr{ 
+	position: absolute;
 	height: 1px;
-	background: #fff;
 	width: 20%;
 	min-width: 150px;
-	margin: 50px auto 20px auto;
-	position: relative;
+	bottom: -35px;
+}
+.dark .section-title-explain hr{ 
+	right: 30px;
+	background: #fff;
+}
+.light .section-title-explain hr{ 
+	left: 30px;
+	background: #301342;
 }
 .section-title-explain hr:after{ 
 	content: '';
-	height: 8px;
-	width: 8px;
-	background: #ffffff;
 	position: absolute;
-	left: 50%;
+	right: 0;
 	top: 50%;
-	-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-	-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-	-o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-	transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent #fff transparent transparent;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.dark .section-title-explain hr:after{ 
+	right: 0;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent #fff transparent transparent;
+}
+.light .section-title-explain hr:after{ 
+	left: 0;
+	border-width: 10px 0 10px 10px;
+	border-color: transparent transparent transparent #301342;
 }
 
 .section-subtitle-explain{ 
