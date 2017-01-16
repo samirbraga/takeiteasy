@@ -50,9 +50,10 @@ $(document).ready(function(){
 	// Animate height in section.introduce
 	setTimeout(function(){
 		introduce.removeClass('shrunken');
-		introduce.css('height', ($(window).height()-100) + "px");
+		introduce.css('height', (window.innerHeight-50) + "px");
 		introduce.addClass('expanded');
 		setTimeout(function(){
+			introduce.removeAttr('style');
 			introduce.css('min-height', '300px');
 			fadeInSlogan();
 		}, 1200)
