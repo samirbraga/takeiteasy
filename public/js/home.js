@@ -1,5 +1,24 @@
 var backgroundUrls = ['designers.jpg', 'livros.jpg', 'ilustracao.jpg', 'escrita.jpg', 'software.jpg', 'apresentacao.jpg', 'design-palettes.jpg'];
 
+var dataImages = [];
+
+backgroundUrls.forEach(function(bgUrl, i){
+	var xml = new XMLHttpRequest(); // Objeto XML
+	var blob;
+	var url = "/public/images/welcome-slide/optimized/";
+	xml.open("GET", url + bgUrl); 
+	xml.responseType = "blob";
+	xml.onload = function (){
+	    if(xml.readyState === 4){
+	        if(xml.status === 200 || xml.status == 0){
+	            blob = URL.createObjectURL(xml.response); 
+	   			dataImages[i] = blob;
+	        }
+	    }
+	}
+	xml.send();
+})
+
 $(document).ready(function(){
 	var mainServices = $('.main-services');
 	var introduce = $('.introduce');
@@ -68,7 +87,7 @@ $(document).ready(function(){
 		var transition = 2000;
 
 		var increaseIndex = function(){
-			if(index >= backgroundUrls.length-1){
+			if(index >= dataImages.length-1){
 				index = 0;
 			}else{
 				index++;
@@ -77,8 +96,8 @@ $(document).ready(function(){
 		}
 
 		function fadeOut(){
-			bg1.css('background-image', 'url("/public/images/welcome-slide/optimized/' + backgroundUrls[index] + '")');
-			bg2.css('background-image', 'url("/public/images/welcome-slide/optimized/' + backgroundUrls[increaseIndex()] + '")');
+			bg1.css('background-image', 'url("' + dataImages[index] + '")');
+			bg2.css('background-image', 'url("' + dataImages[increaseIndex()] + '")');
 			bg1.css('z-index', 10);
 			bg2.css('z-index', 5);
 			bg2.show();
@@ -87,8 +106,8 @@ $(document).ready(function(){
 			}, delay);
 		}
 		function fadeIn(){
-			bg2.css('background-image', 'url("/public/images/welcome-slide/optimized/' + backgroundUrls[index] + '")');
-			bg1.css('background-image', 'url("/public/images/welcome-slide/optimized/' + backgroundUrls[increaseIndex()] + '")');
+			bg2.css('background-image', 'url("' + dataImages[index] + '")');
+			bg1.css('background-image', 'url("' + dataImages[increaseIndex()] + '")');
 			bg1.css('z-index', 5);
 			bg2.css('z-index', 10);
 			bg1.show();

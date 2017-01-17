@@ -30,7 +30,41 @@ h1{
 	text-transform: uppercase;
 }
 
+
 /* general clases */
+.section-title{
+	font-family: 'Bree Th';
+	font-style: normal;
+	font-size: 1.5em;
+	line-height: 100px;
+	text-align: center;
+	color: #9b59b6;
+	text-transform: uppercase;
+}
+.section-title span{
+	position: relative;
+}
+
+.section-title span hr{
+	position: absolute;
+	height: 1px;
+	width: 30%;
+	margin: auto;
+	background: #9b59b6;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	bottom: -15px;
+}
+.section-subtitle{
+	text-align: center;
+	font-family: 'Asap', sans-serif;
+	color: #34495e;
+	font-size: 1.08em;
+}
 
 .center-horizontally{
 	left: 50%;
@@ -60,6 +94,11 @@ h1{
 	align-items: center;
 }
 
+.plain-p{
+	font-family: "Roboto", sans-serif;
+}
+
+/* END general classes */
 
 .page{
 	margin-bottom: 300px;
@@ -272,42 +311,24 @@ h1{
 	background: #fff;
 }
 
+.main-section{
+	min-height: 400px;
+}
+
 .page header{
 	width: 100%;
 	height: auto;
 }
-.section-title{
-	font-family: 'Bree Th';
-	font-style: normal;
-	font-size: 1.5em;
-	line-height: 100px;
-	text-align: center;
-	color: #9b59b6;
-	text-transform: uppercase;
-}
-.section-title span{
+
+.general-explain{
+	height: 70vh;
 	position: relative;
 }
 
-.section-title span hr{
-	position: absolute;
-	height: 1px;
-	width: 30%;
+.general-explain .explain-content {
+	width: 900px;
 	margin: auto;
-	background: #9b59b6;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	-o-transform: translateX(-50%);
-	transform: translateX(-50%);
-	bottom: -15px;
-}
-.section-subtitle{
-	text-align: center;
-	font-family: 'Asap', sans-serif;
-	color: #34495e;
-	font-size: 1.08em;
+	padding: 15px;
 }
 
 .make-you-relax{
