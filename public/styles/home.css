@@ -330,6 +330,9 @@ h1{
 	margin: auto;
 	padding: 15px;
 }
+.general-explain .explain-content p{
+	text-align: center;
+ }
 
 .make-you-relax{
 	height: 100vh;

@@ -1,6 +1,10 @@
 var backgroundUrls = ['designers.jpg', 'livros.jpg', 'ilustracao.jpg', 'escrita.jpg', 'software.jpg', 'apresentacao.jpg', 'design-palettes.jpg'];
 
-var dataImages = [];
+var dataImages = backgroundUrls.map(function(bg){
+	return "/public/images/welcome-slide/optimized/" + bg;
+});
+
+/*
 
 backgroundUrls.forEach(function(bgUrl, i){
 	var xml = new XMLHttpRequest(); // Objeto XML
@@ -18,7 +22,7 @@ backgroundUrls.forEach(function(bgUrl, i){
 	}
 	xml.send();
 })
-
+*/
 $(document).ready(function(){
 	var mainServices = $('.main-services');
 	var introduce = $('.introduce');
