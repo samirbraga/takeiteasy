@@ -80,11 +80,7 @@ $(document).ready(function(){
 			introduce.css('min-height', '300px');
 			fadeInSlogan();
 		}, 1200)
-	}, 200)
-
-	$('.main-menu-icon').click(function(){
-		$('.top-bar .top-bar-content audio').get(0).play()
-	})
+	}, 200);
 
 	// Infinite slide loop
 	function passSlide(){
