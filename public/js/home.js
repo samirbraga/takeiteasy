@@ -82,6 +82,10 @@ $(document).ready(function(){
 		}, 1200)
 	}, 200)
 
+	$('.main-menu-icon').click(function(){
+		$('.top-bar .top-bar-content audio').get(0).play()
+	})
+
 	// Infinite slide loop
 	function passSlide(){
 		var bg1 = $('#introduce-background1');
