@@ -5,7 +5,6 @@ var dataImages = backgroundUrls.map(function(bg){
 });
 
 /*
-
 backgroundUrls.forEach(function(bgUrl, i){
 	var xml = new XMLHttpRequest(); // Objeto XML
 	var blob;
@@ -158,7 +157,7 @@ $(document).ready(function(){
 	 	}
 		lastScrollTop = st;
 
-		if(st > makeYouRelax.header.offset().top - 100){
+		if(st > makeYouRelax.header.offset().top - 300){
 			showServiceAreas();
 		}
 	});

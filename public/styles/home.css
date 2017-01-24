@@ -96,6 +96,7 @@ h1{
 
 .plain-p{
 	font-family: "Roboto", sans-serif;
+	color: #2c3e50;
 }
 
 /* END general classes */
@@ -360,16 +361,17 @@ h1{
 	display: inline-block;
 	position: relative;
 	margin: 0 10px;
+	cursor: pointer;
 	-webkit-transform: translateX(-500px);
 	-moz-transform: translateX(-500px);
 	-ms-transform: translateX(-500px);
 	-o-transform: translateX(-500px);
 	transform: translateX(-500px);
-	-webkit-transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
-	-moz-transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
-	-ms-transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
-	-o-transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
-	transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
+	-webkit-transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980), opacity 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
+	-moz-transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980), opacity 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
+	-ms-transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980), opacity 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
+	-o-transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980), opacity 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
+	transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980), opacity 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
 }
 .make-you-relax .services-area .service-area.showed{
 	-webkit-transform: translateX(0);
@@ -389,6 +391,13 @@ h1{
 	color: #34495e;
 	text-align: center;
 	margin: 10px auto;
+}
+
+.make-you-relax .services-area .service-area hr{ 
+	height: 1px;
+	width: 50%;
+	background: #8090a0;
+	margin: 15px auto;
 }
 
 .area-explain{ 

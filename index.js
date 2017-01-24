@@ -3,17 +3,29 @@ const express = require('express'),
 	  http = require('http'),
 	  load = require('express-load'),
 	  favicon = require('serve-favicon'),
-	  path = require('path');
+	  path = require('path'),
+      minifyHTML = require('express-minify-html');
 
 const server = http.createServer(app);
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
+app.use(minifyHTML({
+    override:      true,
+    exception_url: false,
+    htmlMinifier: {
+        removeComments:            true,
+        collapseWhitespace:        true,
+        collapseBooleanAttributes: false,
+        removeAttributeQuotes:     false,
+        removeEmptyAttributes:     true,
+        minifyJS:                  true,
+        minifyCSS:                 true
+    }
+}));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // cookie and session setup
