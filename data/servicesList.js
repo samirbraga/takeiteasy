@@ -2,7 +2,7 @@ let services = [
 	{name: "Ilustrações", imageSrc: 'Illustrações.png', area: 'design', matches: "desenho, ilustração, draws, caricaturas, personagem, criação, sketchs, vetores"},
 	{name: "Estampas", imageSrc: 'estampa.png', area: 'design', matches: "estampas, desenho, roupa, bolsa"},
 	{name: "Edição de Vídeo", imageSrc: 'Audiovisual.png', area: 'design', matches: "edição de vídeo"},
-	{name: "Criação de Logos", imageSrc: 'logo.png', area: 'design', matches: "criação de logos, desenhos, logotipos"},
+	{name: "Criação de Logos", imageSrc: 'logo.png', area: 'design', matches: "criação de logos, desenhos, logotipos, logo para empresa"},
 	{name: "Correção de Redações", imageSrc: 'Redação.png', area: 'academy', matches: "correção, redação"},
 	{name: "Confecção de Plantas", imageSrc: 'Plantas.png', area: 'design', matches: "autocad, planta baixa"},
 	{name: "Edição de Fotos", imageSrc: 'Edição-de-foto.png', area: 'design', matches: "edição de fotos, photoshop, montagem"},
@@ -14,7 +14,7 @@ let services = [
 	{name: "Planfletos", imageSrc: 'Edição-de-foto.png', area: 'design', matches: "Planfletos"},
 	{name: "Criação de Sites", imageSrc: 'Edição-de-foto.png', area: 'design', matches: "criação de sites, sites"},
 	{name: "Slides", imageSrc: 'Edição-de-foto.png', area: 'academy', matches: "slides, criação de slides, powerpoint, abnt"},
-	{name: "Outdoors e Busdoors", imageSrc: 'Edição-de-foto.png', area: 'design', matches: ""}
+	{name: "Outdoors e Busdoors", imageSrc: 'Edição-de-foto.png', area: 'design', matches: "Outdoors, Busdoors"}
 ];
 
 function parseToUrl(string){

@@ -22,6 +22,18 @@ backgroundUrls.forEach(function(bgUrl, i){
 	xml.send();
 })
 */
+
+function parseToUrl(string){
+	let translate = { "ç": "c", "é": "e", "õ": 'o', "á": "a", "ã": "a", "à": "a", "ű": "u", "ő": "o", "ú": "u", "ö": "o", "ï": "i", "ü": "u", "ó": "o", "í": "i", "É": "E", "Á": "A", "Ű": "U", "Ő": "O", "Ú": "U", "Ö": "O", "Ü": "U", "Ó": "O", "Í": "I" };
+	let translate_re = new RegExp(`[${Object.keys(translate).join('')}]`, 'g'); 
+	
+	string = string.replace(/\s/g, '-')
+				   .replace(/\?/g, '')
+				   .replace(translate_re, letter => translate[letter]);
+	return string.toLowerCase();
+}
+
+
 $(document).ready(function(){
 	var mainServices = $('.main-services');
 	var introduce = $('.introduce');
@@ -212,7 +224,9 @@ $(document).ready(function(){
 	});*/
 
 	// search engine
-
+	function parseToReg(str){
+		return str.replace(/\(/g, '\\(').replace(/\)/g, '\\)').replace(/\./g, '\\.').replace(/\*/g, '\\*').replace(/\+/g, '\\+').replace(/\-/g, '\\-').replace(/\//g, '\\/').replace(/\"/g, '\\"').replace(/\'/g, "\\'").replace(/\,/g, '\\,').replace(/\&/g, '\\&')
+	}
 	function search(){
 
 		var val = (generalSearchInput.val()  || "  ").replace(/^\s*/g, '').replace(/\s*$/g, '');
@@ -221,21 +235,31 @@ $(document).ready(function(){
 			var results = [];
 			services.forEach(function(service, index){
 				service.matches.split(', ').forEach(function(match){
-					var regex = new RegExp(val, 'g');
+					var regex = new RegExp(parseToReg(val), 'gui');
 					if(regex.test(match)){
 						if(results.indexOf(service) < 0){
 							results.push(service);
 						}
 					}
-				});
+				});	
 			});
+			services.forEach(function(service, index){
+				service.matches.split(', ').forEach(function(match){
+					var regex = new RegExp(parseToReg(match), 'gui');
+					if(regex.test(val)){
+						if(results.indexOf(service) < 0){
+							results.push(service);
+						}
+					}
+				});	
+			});
+			var areasNames = {
+				design: "Design",
+				software: "Software",
+				academy: "Acadêmico",
+			}
 			if(results.length > 0){
 				autocomplete.fadeIn('fast')
-				var areasNames = {
-					design: "Design",
-					software: "Software",
-					academy: "Acadêmico",
-				}
 				autocomplete.children('ul').html(
 					results.map(function(result, i){
 						return [
@@ -304,7 +328,6 @@ $(document).ready(function(){
 			}
 		}
 	})
-
 	generalSearchInput.keyup(search);
 
 });
