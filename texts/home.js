@@ -1,1 +1,7 @@
-A TakeItEasy atua como exterminador do seu estresse, solucionando os problemas e adversidades não só do meio estudantil, mas também de vários outros segmentos – com otimização, esmero e excelência. Somos muito mais que um grupo, somos seu amigo. É com a TakeItEasy que você aprende a apreciar o tempo, deixando todo o problema ser resolvido por profissionais de gabarito e com todos os avais para a realização das demasiadas atividades. Com todos os aparatos, equipamentos e requisitos para melhor realizar o serviço proposto, nós oferecemos aos clientes as melhores soluções para seus entraves (desde o mais simples até o mais complexo). Então, sente-se, respire, relaxe e TakeItEasy
+module.exports = {
+	servicesAreas: {
+		design: "Design & WebDesign",
+		software: "Soluções em Software",
+		academy: "Ajuda Acadêmica"
+	},
+}

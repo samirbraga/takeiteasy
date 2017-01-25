@@ -1,4 +1,4 @@
-let servicesList = require('./../data/servicesList').services;
+const servicesList = require('./../data/servicesList');
 
 module.exports = (app) => {
 	servicesList.forEach( function(service, index) {

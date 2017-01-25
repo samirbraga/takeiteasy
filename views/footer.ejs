@@ -1,7 +1,43 @@
 <footer class="main-footer" >
+	<div class="main-footer-content">
+		<nav class="all-services" >
+			<nav>
+				<span><%- texts.servicesAreas.design %></span>
+				<ul>
+					<% services.forEach(function(service){ %>
+						<% if(service.area == "design") { %>
+							<li class="plain-li" ><a href="<%- service.href %>"><%- service.name %></a></li>
+						<% } %>
+					<% }) %>
+				</ul>
+			</nav>
+			<nav>
+				<span><%- texts.servicesAreas.software %></span>
+				<ul>	
+					<% services.forEach(function(service){ %>
+						<% if(service.area == "software") { %>
+							<li class="plain-li" ><a href="<%- service.href %>"><%- service.name %></a></li>
+						<% } %>
+					<% }) %>
+				</ul>
+			</nav>
+			<nav>
+				<span><%- texts.servicesAreas.academy %></span>
+				<ul>
+					<% services.forEach(function(service){ %>
+						<% if(service.area == "academy") { %>
+							<li class="plain-li" ><a href="<%- service.href %>"><%- service.name %></a></li>
+						<% } %>
+					<% }) %>
+				</ul>
+			</nav>
+		</nav>
+	</div>
+	<hr class="section-divider light" >
 	<footer>
 		<figure class="logo">
-			<% include logo-svg %>
+			<%- include('../logo-svg', {size: 'small'}); %>
 		</figure>
+		<hr>
 	</footer>
 </footer>

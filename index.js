@@ -13,6 +13,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+/*
 app.use(minifyHTML({
     override:      true,
     exception_url: false,
@@ -26,6 +28,8 @@ app.use(minifyHTML({
         minifyCSS:                 true
     }
 }));
+*/
+
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // cookie and session setup
@@ -33,8 +37,9 @@ app.disable('x-powered-by');
 
 
 load('controllers').
-	then('routes').
+    then('routes').
 		into(app);
+
 
 const port = Number( process.env.PORT || 8000 );
 server.listen(port, () => {

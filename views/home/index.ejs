@@ -9,11 +9,14 @@
    		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
    		<meta http-equiv="content-language" content="br" />
    		<meta name="description" content="Temos a solução exata para o seu problema, você escolhe quanto pode pagar e a gente te ajuda." />
-		<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Asap|Great+Vibes|Lobster|Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Asap|Cookie|Great+Vibes|Lobster|Merienda+One|Roboto" rel="stylesheet">
 		<link rel="stylesheet" href="/public/styles/general-fonts.css">
 		<link rel="stylesheet" href="/public/styles/top-bar.css">
 		<link rel="stylesheet" href="/public/styles/footer.css">
 		<link rel="stylesheet" href="/public/styles/home.css">
+		<script>
+			var services = <%- JSON.stringify(services) %>;
+		</script>
 		<script type="text/javascript" src="/public/js/libs/jquery-3.1.1.min.js" ></script>
 		<script type="text/javascript" src="/public/js/home.js" ></script>
 	</head>
@@ -26,6 +29,7 @@
 			<!-- Section General-explain -->
 			<% include section-general-explain %>
 			<!-- END section General-explain -->
+
 			<hr class="section-divider">
 
 			<!-- Section Makeyourelax -->
@@ -33,15 +37,15 @@
 			<!-- END section Makeyourelax -->
 
 			<!-- Section Design-area-explain -->
-			<% include section-design-area-explain %>
+			<%- include('section-design-area-explain', { title: texts.servicesAreas.design.split(' ') }); %>
 			<!-- END section Design-area-explain -->
 
 			<!-- Section Software-area-explain -->
-			<% include section-software-area-explain %>
+			<%- include('section-software-area-explain', {title: texts.servicesAreas.software.split(' ') }); %>
 			<!-- END section Software-area-explain -->
 
 			<!-- Section Academy-area-explain -->
-			<% include section-academy-area-explain %>
+			<%- include('section-academy-area-explain', {title: texts.servicesAreas.academy.split(' ') }); %>
 			<!-- END section Academy-area-explain -->
 
 			<!-- Section Main-skills -->

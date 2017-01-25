@@ -28,6 +28,7 @@ $(document).ready(function(){
 	var topBar = $('.top-bar');
 	var tbMenuRoutes = $('.top-bar .side-menu .menu-routes');
 	var generalSearch = $('.top-bar .side-menu .search-icon .search-input-box');
+	var autocomplete = $('.top-bar .side-menu .search-icon .autocomplete');
 	var generalSearchInput = $('.top-bar .side-menu .search-icon .search-input-box input');
 	var makeYouRelax = {
 		header: $('.make-you-relax header'),
@@ -163,16 +164,29 @@ $(document).ready(function(){
 	});
 
 	// Show search input box
-	$('.search-icon').click(function () {
+	$('.search-icon .icon-svg').click(function (e) {
+		e.stopPropagation();
 		tbMenuRoutes.stop().fadeTo('fast', 0, function(){
 			generalSearch.css('width', '300px');
 			generalSearchInput.focus();
-		})
+		});
+		search();
 	});
-	generalSearchInput.on('blur', function(){
+	$('body').on('click', function(){
 		generalSearch.css('width', '0');
 		tbMenuRoutes.delay(200).fadeTo('fast', 1)
+		autocomplete.fadeOut('fast')
 	})
+	generalSearch.click(function(e){
+		e.stopPropagation();
+	})
+	autocomplete.click(function(e){
+		e.stopPropagation();
+	})
+	generalSearchInput.click(function(e){
+		e.stopPropagation();
+	})
+
 
 	var toScroll = $('html, body');
 	makeYouRelax.areaDesign.click(function(){
@@ -196,4 +210,101 @@ $(document).ready(function(){
 			fadeInServices()
 		}
 	});*/
+
+	// search engine
+
+	function search(){
+
+		var val = (generalSearchInput.val()  || "  ").replace(/^\s*/g, '').replace(/\s*$/g, '');
+
+		if(val.length > 3){
+			var results = [];
+			services.forEach(function(service, index){
+				service.matches.split(', ').forEach(function(match){
+					var regex = new RegExp(val, 'g');
+					if(regex.test(match)){
+						if(results.indexOf(service) < 0){
+							results.push(service);
+						}
+					}
+				});
+			});
+			if(results.length > 0){
+				autocomplete.fadeIn('fast')
+				var areasNames = {
+					design: "Design",
+					software: "Software",
+					academy: "Acadêmico",
+				}
+				autocomplete.children('ul').html(
+					results.map(function(result, i){
+						return [
+							"<a href='" + result.href +"' class='search-result-item' tabindex='0'>",
+								"<li class='plain-li' tabindex='-1' >",
+									"<span class='name'>" + result.name + "</span>",
+									"<span class='area'>" + areasNames[result.area] + "</span>",
+								"</li>",
+							"</a>"
+						].join('');
+					})
+				);
+			}else{
+				autocomplete.children('ul').html(
+					[
+						"<a href='/servicos' class='search-result-item' tabindex='0'>",
+							"<li class='plain-li'  tabindex='-1'>",
+								"<span class='name'>Veja todos os nosso serviços<span>",
+							"</li>",
+						"</a>"
+					].join('')
+				);
+			}
+		}
+	}
+	var searchResult = $('.autocomplete ul a');
+
+	generalSearchInput.keydown(function(e){
+		e.stopPropagation();
+		searchResult = $('.autocomplete ul a');
+		if(e.keyCode == 40){
+			e.preventDefault()
+			searchResult.eq(0).focus();
+		}else if(e.keyCode == 38){
+			e.preventDefault()
+			searchResult.eq(searchResult.length - 1).focus();
+		}else if(e.keyCode == 27){
+			e.preventDefault()
+			generalSearchInput.blur();
+			generalSearch.css('width', '0');
+			tbMenuRoutes.delay(200).fadeTo('fast', 1)
+			autocomplete.fadeOut('fast')
+		}
+	});
+
+	$(document).keydown(function(e){
+		if($(document.activeElement).hasClass('search-result-item')){
+			var li = $(document.activeElement);
+			var resultIndex = li.index();
+			searchResult = $('.autocomplete ul a');
+			var keycode = e.keyCode || e.which;
+			if(keycode == 40){
+				e.preventDefault();
+				if(resultIndex == searchResult.length-1){
+					searchResult.eq(0).focus();
+				}else{
+					searchResult.eq(+resultIndex+1).focus();
+				}
+			}else if(keycode == 38){
+				e.preventDefault();
+				if(resultIndex == 0){
+					searchResult.eq(searchResult.length-1).focus();
+				}else{
+					searchResult.eq(+resultIndex-1).focus();
+				}
+			}
+		}
+	})
+
+	generalSearchInput.keyup(search);
+
 });
