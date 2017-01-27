@@ -168,7 +168,7 @@
 .top-bar .top-bar-content .side-menu .search-icon .autocomplete ul a:hover{
 	background: #e9e1ed;
 }
-.top-bar .top-bar-content .side-menu .search-icon .autocomplete ul a:focus{
+.top-bar .top-bar-content .side-menu .search-icon .autocomplete ul a.selected{
 	background: #e9e1ed;
 }
 

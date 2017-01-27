@@ -27,6 +27,7 @@ footer.main-footer footer{
 	height: 70px;
 	width: 100%;
 }
+
 footer.main-footer footer hr{
 	position: absolute;
 	bottom: 0;
@@ -63,7 +64,7 @@ footer.main-footer .main-footer-content{
 footer.main-footer .main-footer-content nav{ 
 	text-align: center;
 	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 footer.main-footer .main-footer-content nav nav{ 
 	display: inline-block;
@@ -72,10 +73,17 @@ footer.main-footer .main-footer-content nav nav{
 	text-align: left;
 }
 footer.main-footer .main-footer-content nav nav span{ 
+	display: block;
 	font-size: 1.2em;
 	font-family: 'Roboto', sans-serif;
 	color: rgba(255, 255, 255, 0.2);
-}
+}/* 
+footer.main-footer .main-footer-content nav nav span hr{ 
+	height: 1px;
+	width: 30%;
+	background: rgba(255, 255, 255, 0.2);
+	margin-top: 3px;
+} */
 footer.main-footer .main-footer-content nav nav ul{ 
 	margin-top: 20px;
 }

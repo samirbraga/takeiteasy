@@ -30,8 +30,64 @@ h1{
 	text-transform: uppercase;
 }
 
+.networking{
+	margin: 10px auto 20px auto;
+	text-align: center;
+}
+.networking a{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-size: 100% 100%;
+	margin: 0 5px;
+	will-change: opacity;
+	opacity: 0.5;
+	-webkit-transition: opacity 0.1s ease-in;
+	-moz-transition: opacity 0.1s ease-in;
+	-o-transition: opacity 0.1s ease-in;
+	transition: opacity 0.1s ease-in;
+}
+.networking a:hover{
+	opacity: 0.9;
+}
+.networking.light a.facebook{
+	background-image: url('/public/images/general-icons/facebook.png');
+}
+.networking.light a.twitter{
+	background-image: url('/public/images/general-icons/twitter.png');
+}
+.networking.light a.github{
+	background-image: url('/public/images/general-icons/github.png');
+}
+.networking.light a.instagram{
+	background-image: url('/public/images/general-icons/instagram.png');
+}
+.networking.dark a.facebook{
+	background-image: url('/public/images/general-icons/purple_facebook.png');
+}
+.networking.dark a.twitter{
+	background-image: url('/public/images/general-icons/purple_twitter.png');
+}
+.networking.dark a.github{
+	background-image: url('/public/images/general-icons/purple_github.png');
+}
+.networking.dark a.instagram{
+	background-image: url('/public/images/general-icons/purple_instagram.png');
+}
 
 /* general clases */
+
+.soft-scroll::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+.soft-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+}
+.soft-scroll::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.08);
+}
+
 .section-title{
 	font-family: 'Bree Th';
 	font-style: normal;

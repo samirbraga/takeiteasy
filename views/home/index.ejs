@@ -2,7 +2,7 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8" >
-		<title>TakeItEasy</title>
+		<title><%- texts.companyName %></title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,18 +22,30 @@
 	</head>
 	<body>
 		<% include ../topbar %>
+		
+		<%- 
+			include('../main-menu', {
+				areaNames: {
+					design: texts.servicesAreas.design,
+					software: texts.servicesAreas.software,
+					academy: texts.servicesAreas.academy,
+				}
+			});
+		%>
+
 		<main class="page">
 			<!-- Section Introduce -->
-			<% include section-introduce %>
+			<%- include('section-introduce', {slogan: [texts.slogan.split(', ')[0] + ", ", texts.slogan.split(', ')[1]]}); %>
 			<!-- END section Introduce -->
+
 			<!-- Section General-explain -->
-			<% include section-general-explain %>
+			<%- include('section-general-explain'); %>
 			<!-- END section General-explain -->
 
 			<hr class="section-divider">
 
 			<!-- Section Makeyourelax -->
-			<% include section-makeyourelax %>
+			<%- include('section-makeyourelax'); %>
 			<!-- END section Makeyourelax -->
 
 			<!-- Section Design-area-explain -->
@@ -49,7 +61,7 @@
 			<!-- END section Academy-area-explain -->
 
 			<!-- Section Main-skills -->
-			<% include section-main-skills %>
+			<%- include('section-main-skills'); %>
 			<!-- END section Main-skills -->
 		
 			<header>
@@ -62,7 +74,15 @@
 			<section class="meet-us" >
 			</section>
 		</main>
-		<% include ../footer%>
+		<%- 
+			include('../footer', {
+				areaNames: {
+					design: texts.servicesAreas.design,
+					software: texts.servicesAreas.software,
+					academy: texts.servicesAreas.academy,
+				}
+			}); 
+		%>
 	</body>
 </html>
 
