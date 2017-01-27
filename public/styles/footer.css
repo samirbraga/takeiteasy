@@ -3,9 +3,6 @@ footer.main-footer{
 	min-height: 400px;
 	width: 100%;
 	position: relative;
-	background: #9b59b6;
-	background: -webkit-linear-gradient(to left, #612e76 , #34193f);
-	background: linear-gradient(to left, #612e76 , #34193f);
 	padding-bottom: 100px; 
 }
 footer.main-footer:after{

@@ -39,25 +39,40 @@
 			<!-- END section Introduce -->
 
 			<!-- Section General-explain -->
-			<%- include('section-general-explain'); %>
+			<%- include('section-general-explain', {text: texts.sections.generalExplain }); %>
 			<!-- END section General-explain -->
 
 			<hr class="section-divider">
 
 			<!-- Section Makeyourelax -->
-			<%- include('section-makeyourelax'); %>
+			<%- include('section-makeyourelax', {text: texts.sections.makeYouRelax }); %>
 			<!-- END section Makeyourelax -->
 
 			<!-- Section Design-area-explain -->
-			<%- include('section-design-area-explain', { title: texts.servicesAreas.design.split(' ') }); %>
+			<%- 
+				include('section-design-area-explain', { 
+					title: texts.servicesAreas.design.split(' '),
+					text: texts.sections.areaExplain.design
+				}); 
+			%>
 			<!-- END section Design-area-explain -->
 
 			<!-- Section Software-area-explain -->
-			<%- include('section-software-area-explain', {title: texts.servicesAreas.software.split(' ') }); %>
+			<%- 
+				include('section-software-area-explain', {
+					title: texts.servicesAreas.software.split(' '),
+					text: texts.sections.areaExplain.software
+				}); 
+			%>
 			<!-- END section Software-area-explain -->
 
 			<!-- Section Academy-area-explain -->
-			<%- include('section-academy-area-explain', {title: texts.servicesAreas.academy.split(' ') }); %>
+			<%- 
+				include('section-academy-area-explain', {
+					title: texts.servicesAreas.academy.split(' '), 
+					text: texts.sections.areaExplain.academy
+				}); 
+			%>
 			<!-- END section Academy-area-explain -->
 
 			<!-- Section Main-skills -->

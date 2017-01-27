@@ -34,23 +34,72 @@
 		-moz-transform: translateX(0);
 		-ms-transform: translateX(0);
 		-o-transform: translateX(0);
-		transform: translateX(0);
+		transform: translateX(0);/* 
 		-webkit-box-shadow: -1px 0 10px 0 rgba(0,0,0,0.3);
 		-moz-box-shadow: -1px 0 10px 0 rgba(0,0,0,0.3);
 		-ms-box-shadow: -1px 0 10px 0 rgba(0,0,0,0.3);
 		-o-box-shadow: -1px 0 10px 0 rgba(0,0,0,0.3);
-		box-shadow: -1px 0 10px 0 rgba(0,0,0,0.3);
+		box-shadow: -1px 0 10px 0 rgba(0,0,0,0.3); */
 	}
 	.main-menu-container .main-menu .main-menu-topbar{
 		width: 100%;
 		height: 85px;
-		background: #fff;
 		border-bottom: 1px solid #f9eaff;
+	}
+	.main-menu-container .main-menu .main-menu-topbar .main-menu-title{
+		height: 100%;
+		float: left;
+		line-height: 85px;
+		padding-left: 25px;
+		font-family: 'Bree th';
+		font-weight: bold;
+		font-size: 1.2em;
+		color: #fff;
+	}
+	.main-menu-container .main-menu .main-menu-topbar .main-menu-close{
+		width: 80px;
+		height: 100%;
+		float: right;
+		position: relative;
+		cursor: pointer;
+	}
+	.main-menu-container .main-menu .main-menu-topbar .main-menu-close span{
+		position: absolute;
+		display: block;
+		width: 25px;
+		height: 2px;
+		top: 50%;
+		left: 50%;
+		background: rgba(255, 255, 255, 0.5);
+		-webkit-transition: transform 0.4s ease-out;
+		-moz-transition: transform 0.4s ease-out;
+		-ms-transition: transform 0.4s ease-out;
+		-o-transition: transform 0.4s ease-out;
+		transition: transform 0.4s ease-out;
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		-moz-transform: translateX(-50%) translateY(-50%);
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-o-transform: translateX(-50%) translateY(-50%);
+	}
+	.main-menu-container .main-menu .main-menu-topbar .main-menu-close:hover span{
+		background: rgba(255, 255, 255, 0.9);
+	}
+	.main-menu-container .main-menu.showed .main-menu-topbar .main-menu-close span:nth-child(1){
+		-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+		-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+		-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+		-o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	}
+	.main-menu-container .main-menu.showed .main-menu-topbar .main-menu-close span:nth-child(2){
+		-webkit-transform: translateX(-50%) translateY(-50%) rotate(135deg);
+		-moz-transform: translateX(-50%) translateY(-50%) rotate(135deg);
+		-ms-transform: translateX(-50%) translateY(-50%) rotate(135deg);
+		-o-transform: translateX(-50%) translateY(-50%) rotate(135deg);
 	}
 	.main-menu-container .main-menu .main-menu-content{
 		width: 400px;
-		height: calc(100% - 215px);
-		height: calc(100% - 215px);
+		height: -webkit-calc(100% - 215px);
+		height: -moz-calc(100% - 215px);
 		height: calc(100% - 215px);
 		background: #fff;
 		padding: 20px 25px;
@@ -61,7 +110,7 @@
 	}
 	.main-menu-container .main-menu .main-menu-content .menu-services-area-list span{
 		display: block;
-		font-size: 1.2em;
+		font-size: 1.1em;
 		font-family: 'Roboto', sans-serif;
 		margin-bottom: 10px;
 		color: #9b59b6;
@@ -105,10 +154,13 @@
 </style>
 <div class="main-menu-container">
 	<div class="main-menu">
-		<div class="main-menu-topbar">
-			
-		</div>
-
+		<header class="main-menu-topbar inverted-purple-gradient">
+			<span class="main-menu-title" >EM QUE TE AJUDAMOS</span>
+			<div class="main-menu-close">
+				<span></span>
+				<span></span>
+			</div>
+		</header>
 		<article class="main-menu-content soft-scroll">
 			<% for(area in sortedServices){ %>
 				<section class="menu-services-area-list area-list-<%- area %>" >

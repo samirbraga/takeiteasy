@@ -77,6 +77,17 @@ h1{
 
 /* general clases */
 
+.standart-purple-gradient{
+	background: #9b59b6;
+	background: -webkit-linear-gradient(to left, #612e76 , #34193f);
+	background: linear-gradient(to left, #612e76 , #34193f);
+}
+.inverted-purple-gradient{
+	background: #9b59b6;
+	background: -webkit-linear-gradient(to right, #612e76 , #34193f);
+	background: linear-gradient(to right, #612e76 , #34193f);
+}
+
 .soft-scroll::-webkit-scrollbar {
     width: 6px !important;
     height: 6px !important;

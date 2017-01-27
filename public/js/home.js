@@ -61,7 +61,8 @@ $(document).ready(function(){
 		self: $('.main-menu'),
 		topbar: $('.main-menu-topbar'),
 		content: $('.main-menu-content'),
-		footer: $('.main-menu-footer')
+		footer: $('.main-menu-footer'),
+		close: $('.main-menu-close')
 	}
 	
 	// Sequence services fade-in 
@@ -390,14 +391,18 @@ $(document).ready(function(){
 	mainMenu.self.click(function(e){
 		e.stopPropagation();
 	})
-	mainMenu.container.click(function(){
-		var self = $(this);
+
+	function closeMenu(){
+		var self = mainMenu.container;
 		mainMenu.self.removeClass('showed');
 		setTimeout(function(){
 			self.fadeOut();
 		}, 100);
 		$('body').css('overflow-y', 'auto');
-	})
+	}
+
+	mainMenu.container.click(closeMenu);
+	mainMenu.close.click(closeMenu);
 });
 
 
