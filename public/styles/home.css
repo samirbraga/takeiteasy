@@ -103,16 +103,19 @@ p{
 }
 
 .section-title{
+	display: block;
 	font-family: 'Bree Th';
 	font-style: normal;
 	font-size: 1.5em;
-	line-height: 100px;
 	text-align: center;
 	color: #9b59b6;
 	text-transform: uppercase;
+	margin-top: 60px;
+	padding-bottom: 30px;
 }
 .section-title span{
 	position: relative;
+	display: inline-block;
 }
 
 .section-title span hr{
