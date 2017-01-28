@@ -49,7 +49,7 @@ footer.main-footer footer figure .logo-piece{
 @media (max-width: 800px){
 	footer.main-footer:after{
 		content: '';
-		background-size: 100% 70%;
+		background-size: 100% 60%;
 	}
 }
 
@@ -58,7 +58,8 @@ footer.main-footer .main-footer-content{
 	padding-top: 110px;
 }
 
-footer.main-footer .main-footer-content nav{ 
+footer.main-footer .main-footer-content nav{
+	display: block;
 	text-align: center;
 	margin-top: 30px;
 	margin-bottom: 10px;
@@ -69,6 +70,17 @@ footer.main-footer .main-footer-content nav nav{
 	vertical-align: text-top;
 	text-align: left;
 }
+
+@media (max-width: 800px){
+	
+	footer.main-footer .main-footer-content nav{ 
+		display: flex;
+		justify-content: center;
+		flex-direction: column; 
+		align-items: center;
+	}
+}
+
 footer.main-footer .main-footer-content nav nav span{ 
 	display: block;
 	font-size: 1.2em;

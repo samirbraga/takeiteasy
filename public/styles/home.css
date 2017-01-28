@@ -29,6 +29,9 @@ a{
 h1{
 	text-transform: uppercase;
 }
+p{
+	word-wrap: break-word;
+}
 
 .networking{
 	margin: 10px auto 20px auto;
@@ -130,7 +133,8 @@ h1{
 	text-align: center;
 	font-family: 'Asap', sans-serif;
 	color: #34495e;
-	font-size: 1.08em;
+	font-size: 1em;
+	padding: 0 10px;
 }
 
 .center-horizontally{
@@ -172,8 +176,11 @@ h1{
 /* END general classes */
 
 .page{
-	margin-bottom: 300px;
+	margin-bottom: 100px;
 }
+
+
+/* Start introduce style */
 
 .introduce{
 	width: 100%;
@@ -200,24 +207,7 @@ h1{
 	height: -o-calc(100vh - 50px);
 	height: calc(100vh - 50px);
 }
-/* .introduce:before{
-	content: '';
-	width: 100%;
-	height: 1px;
-	position: absolute;
-	top: 2px;
-	left: 0;
-	background: #fff; 
-} */
-/* .introduce:after{
-	content: '';
-	width: 100%;
-	height: 1px;
-	position: absolute;
-	bottom: 2px;
-	left: 0;
-	background: #fff;
-} */
+
 .introduce p{
 	display: block;
 	position: relative;
@@ -356,6 +346,9 @@ h1{
 	border-left: 50px solid transparent;
 
 }
+/* End Make-you-relax style */
+
+
 
 .section-divider{
 	width: 60%;
@@ -404,13 +397,17 @@ h1{
 	height: auto;
 }
 
+
+
+/* Start General-explain style */
+
 .general-explain{
 	height: 70vh;
 	position: relative;
 }
 
 .general-explain .explain-content {
-	width: 900px;
+	max-width: 900px;
 	margin: auto;
 	padding: 15px;
 }
@@ -418,22 +415,22 @@ h1{
 	text-align: center;
  }
 
+/* End General-explain style */
+
+
+
+/* Start Make-you-relax style */
+
 .make-you-relax{
-	height: 110vh;
 	position: relative;
+	min-height: 110vh;
+	height: auto;
 }
 .make-you-relax .services-area{
-	position: absolute;
 	text-align: center;
 	padding: 20px 0;
-	top: 55%;
-	left: 50%;
-	-webkit-transform: translateY(-50%) translateX(-50%);
-	-moz-transform: translateY(-50%) translateX(-50%);
-	-ms-transform: translateY(-50%) translateX(-50%);
-	-o-transform: translateY(-50%) translateX(-50%);
-	transform: translateY(-50%) translateX(-50%);
 	width: 100%;
+	margin-top: 60px;
  }
 .make-you-relax .services-area .service-area{
 	height: auto;
@@ -455,6 +452,21 @@ h1{
 	-ms-transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980), opacity 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
 	-o-transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980), opacity 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
 	transition: transform 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980), opacity 0.3s cubic-bezier(0.120, 0.900, 0.470, 0.980);
+}
+
+@media (max-width: 650px){
+	.make-you-relax .services-area{
+		text-align: center;
+		padding: 20px 0;
+		width: 100%;
+		margin-top: 0;
+	}
+	.make-you-relax .services-area .service-area{
+		width: 50%;
+		max-width: 300px;
+		display: block;
+		margin: 50px auto;
+	}
 }
 .make-you-relax .services-area .service-area.showed{
 	-webkit-transform: translateX(0);
@@ -501,6 +513,11 @@ h1{
 	-o-transform: scaleX(1);
 	transform: scaleX(1);
 }
+
+/* End Make-you-relax style */
+
+
+/* Start Area-explain style */
 
 .area-explain{ 
 	width: 100%;
@@ -647,7 +664,6 @@ h1{
 	color: #ffffff;
 	background: #301342;
 } 
-
 .design-area-explain{
 	background-image: url("/public/images/explain-backgrounds/design.jpg");
 }
@@ -657,6 +673,74 @@ h1{
 .academy-area-explain{
 	background-image: url("/public/images/explain-backgrounds/academy.jpg");
 }
+
+/* End Area-explain style */
+
+
+
+/* Start Meet-us style */
+
+.meet-us{
+	margin-top: 60px;
+}
+.meet-us header{
+	margin-bottom: 40px;
+}
+.meet-us article{
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	padding: 10px 20px;
+}
+.meet-us article img{
+	width: 300px;
+}
+.meet-us article .article-content{
+	flex-grow: 1;
+}
+.meet-us article.right .article-content{
+	margin-left: 60px;
+}
+.meet-us article.left .article-content{
+	margin-right: 60px;
+}
+.meet-us article .article-content h2{
+	font-size: 1.6em;
+	font-family: 'Asap', sans-serif;
+	font-weight: lighter;
+	margin-bottom: 15px;
+}
+.meet-us article .article-content p{
+	font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 750px){
+	.meet-us article{
+		flex-wrap: wrap;
+		padding: 0 30px
+	}	
+	.meet-us article img{
+		margin: auto;
+	}
+	.meet-us article.right .article-content{
+		margin-left: 0;
+	}
+	.meet-us article.left .article-content{
+		margin-right: 0;
+	}
+}
+
+.meet-us .article-divider{
+	height: 1px;
+	background: #e8e8ed;
+	width: 100%;
+	max-width: 1000px;
+	margin: 40px auto;
+}
+
+
+/* End Meet-us style */
+
 
 .section-title-explain{ 
 	position: relative;
@@ -724,13 +808,16 @@ h1{
 }
 
 .section-subtitle-explain{ 
-	font-size: 1.8em;
+	display: block;
+	font-size: 1.6em;
 	color: #fff;
 	font-family: 'Great Vibes', cursive;
 	text-align: center;
 	text-shadow: 0 0 10px rgba(0,0,0,.8);
 	margin-top: 10px;
 	display: none;
+	max-width: 900px;
+	padding: 0 10px;
 }
 
 /*

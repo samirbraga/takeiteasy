@@ -180,15 +180,16 @@ $(document).ready(function(){
 	// Show search input box
 	$('.search-icon .icon-svg').click(function (e) {
 		e.stopPropagation();
-		tbMenuRoutes.stop().fadeTo('fast', 0, function(){
+		tbMenuRoutes.css('opacity', 0);
+		setTimeout(function(){
 			generalSearch.css('width', '300px');
 			generalSearchInput.focus();
-		});
+		}, 200);
 		search();
 	});
 	$('body').on('click', function(){
 		generalSearch.css('width', '0');
-		tbMenuRoutes.delay(200).fadeTo('fast', 1)
+		tbMenuRoutes.css('opacity', 1);
 		autocomplete.fadeOut('fast')
 	})
 	generalSearch.click(function(e){

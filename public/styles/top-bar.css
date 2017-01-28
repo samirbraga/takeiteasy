@@ -199,9 +199,15 @@
 }
 
 .top-bar .top-bar-content .side-menu .menu-routes{
-	width: auto;
 	display: inline-block;
+	width: auto;
 	will-change: opacity;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s ease-out;
+	-moz-transition: opacity 0.3s ease-out;
+	-ms-transition: opacity 0.3s ease-out;
+	-o-transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
 }
 .top-bar .top-bar-content .side-menu .icon{
 	cursor: pointer;
