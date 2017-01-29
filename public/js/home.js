@@ -112,9 +112,9 @@ $(document).ready(function(){
 		function fadeOut(){
 			bg1.css('background-image', 'url("' + dataImages[index] + '")');
 			bg2.css('background-image', 'url("' + dataImages[increaseIndex()] + '")');
-			bg1.css('z-index', 10);
-			bg2.css('z-index', 5);
-			bg2.show();
+			//bg1.css('z-index', 10);
+			//bg2.css('z-index', 5);
+			//bg2.show();
 			setTimeout(function(){
 				bg1.fadeOut(transition, fadeIn);
 			}, delay);
@@ -122,11 +122,11 @@ $(document).ready(function(){
 		function fadeIn(){
 			bg2.css('background-image', 'url("' + dataImages[index] + '")');
 			bg1.css('background-image', 'url("' + dataImages[increaseIndex()] + '")');
-			bg1.css('z-index', 5);
-			bg2.css('z-index', 10);
-			bg1.show();
+			//bg1.css('z-index', 5);
+			//bg2.css('z-index', 10);
+			//bg1.show();
 			setTimeout(function(){
-				bg2.fadeOut(transition, fadeOut);
+				bg1.fadeIn(transition, fadeOut);
 			}, delay);
 		}
 		fadeOut();
@@ -185,7 +185,7 @@ $(document).ready(function(){
 			generalSearch.css('width', '300px');
 			generalSearchInput.focus();
 		}, 200);
-		search();
+		renderResults(allResults[allResults.length-1])
 	});
 	$('body').on('click', function(){
 		generalSearch.css('width', '0');
@@ -221,111 +221,56 @@ $(document).ready(function(){
 	})
 
 	// search engine
-	function parseToReg(str){
-		return str.replace(/\(/g, '\\(')
-				  .replace(/\)/g, '\\)')
-				  .replace(/\./g, '\\.')
-				  .replace(/\*/g, '\\*')
-				  .replace(/\+/g, '\\+')
-				  .replace(/\-/g, '\\-')
-				  .replace(/\//g, '\\/')
-				  .replace(/\"/g, '\\"')
-				  .replace(/\'/g, "\\'")
-				  .replace(/\,/g, '\\,')
-				  .replace(/\&/g, '\\&');
-	}
-	function removeAccents(str){
-		var translate = { "ç": "c", "é": "e", "õ": 'o', "á": "a", "ã": "a", "à": "a", "ű": "u", "ő": "o", "ú": "u", "ö": "o", "ï": "i", "ü": "u", "ó": "o", "í": "i", "É": "E", "Á": "A", "Ű": "U", "Ő": "O", "Ú": "U", "Ö": "O", "Ü": "U", "Ó": "O", "Í": "I" };
-		var translate_re = new RegExp("[" + Object.keys(translate).join('') + "]", 'g'); 
-		
-		return str.replace(translate_re, function(letter){
-		  	  	  return translate[letter];
-	           });
-	}
-
 	var allResults = [];
 	var resultElements;
-	
-	function search(){
 
-		var val = (generalSearchInput.val()  || "  ")
-				  .replace(/^\s*/g, '')
-				  .replace(/\s*$/g, '');
+	function renderResults(results){
+		if(JSON.stringify(allResults[allResults.length - 1]) != JSON.stringify(allResults[allResults.length - 2])){
+			
+			var areasNames = {
+				design: "Design",
+				software: "Software",
+				academy: "Acadêmico",
+			}
 
-		val = removeAccents(val);
+			autocomplete.fadeIn('fast');
 
-		if(val.length > 3){
+			var fragment = document.createDocumentFragment();
 
-			var results = [];
-
-			services.forEach(function(service, index){
-				service.matches.split(', ').forEach(function(match){
-					match = removeAccents(match);
-
-					var regex1 = new RegExp(parseToReg(val), 'gui');
-					if(regex1.test(match)){
-						if(results.indexOf(service) < 0){
-							results.push(service);
-						}
-					}
-					var regex2 = new RegExp(parseToReg(match), 'gui');
-					if(regex2.test(val)){
-						if(results.indexOf(service) < 0){
-							results.push(service);
-						}
-					}
-				});	
-			});
-
-			allResults.push(results);
-
-			if(JSON.stringify(allResults[allResults.length - 1]) != JSON.stringify(allResults[allResults.length - 2])){
-				
-				var areasNames = {
-					design: "Design",
-					software: "Software",
-					academy: "Acadêmico",
-				}
-
-				autocomplete.fadeIn('fast');
-
-				var fragment = document.createDocumentFragment();
-
-				if(results.length > 0){
-					results.forEach(function(result, i){
-						var html = '<li class="plain-li">' + 
-									   '<span class="name">'+ result.name +'</span>' + 
-									   '<span class="area">'+ areasNames[result.area] +'</span>' + 
-								   '</li>';
-
-						var a = document.createElement('a');
-
-						a.href = result.href;
-						a.className = 'search-result-item';
-						a.tabindex = '0';
-						a.setAttribute('data-value', result.name);
-						a.innerHTML = html;
-										
-						fragment.appendChild(a);
-					});
-				}else{
-					var html = '<li class="plain-li" tabindex="-1" >' + 
-								 	'<span class="name">Veja todos os nossos serviços</span>' + 
+			if(results.length > 0){
+				results.forEach(function(result, i){
+					var html = '<li class="plain-li">' + 
+								   '<span class="name">'+ result.name +'</span>' + 
+								   '<span class="area">'+ areasNames[result.area] +'</span>' + 
 							   '</li>';
 
-				    var a = document.createElement('a');
+					var a = document.createElement('a');
 
-					a.href = '/servicos';
+					a.href = result.href;
 					a.className = 'search-result-item';
 					a.tabindex = '0';
+					a.setAttribute('data-value', result.name);
 					a.innerHTML = html;
-
+									
 					fragment.appendChild(a);
-				}
+				});
+			}else{
+				var html = '<li class="plain-li" tabindex="-1" >' + 
+							 	'<span class="name">Veja todos os nossos serviços</span>' + 
+						   '</li>';
 
-				autocomplete.children('ul').html('');
-				autocomplete.children('ul').get(0).appendChild(fragment);
+			    var a = document.createElement('a');
+
+				a.href = '/servicos';
+				a.className = 'search-result-item';
+				a.tabindex = '0';
+				a.innerHTML = html;
+
+				fragment.appendChild(a);
 			}
+
+			autocomplete.children('ul').html('');
+			autocomplete.children('ul').get(0).appendChild(fragment);
 		}
 	}
 
@@ -381,7 +326,12 @@ $(document).ready(function(){
 		}
 	});
 
-	generalSearchInput.on('input', search);
+	generalSearchInput.on('input', function(){
+		$.get("/search?q=" + this.value, function(results, status){
+			allResults.push(results);
+	        renderResults(results);
+	    });
+	});
 
 	// toggle menu
 	mainMenu.icon.click(function () {

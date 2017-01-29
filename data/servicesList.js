@@ -1,5 +1,5 @@
 let services = [
-	{name: "Ilustrações", imageSrc: 'Illustrações.png', area: 'design', matches: "desenho, ilustração, draws, caricaturas, personagem, criação, sketchs, vetores"},
+	{name: "Ilustrações", imageSrc: 'Illustrações.png', area: 'design', matches: "desenho, ilustração, draws, caricaturas, personagem, sketchs, vetores"},
 	{name: "Estampas", imageSrc: 'estampa.png', area: 'design', matches: "estampas, desenho, roupa, bolsa"},
 	{name: "Edição de Vídeo", imageSrc: 'Audiovisual.png', area: 'design', matches: "edição de vídeo"},
 	{name: "Criação de Logos", imageSrc: 'logo.png', area: 'design', matches: "criação de logos, desenhos, logotipos, logo para empresa"},
@@ -30,7 +30,5 @@ function parseToUrl(string){
 services.forEach( function(service, index) {
 	service['href'] = `/servicos/${ parseToUrl(service.name) }`;
 });
-
-console.log(services)
 
 module.exports = services;
