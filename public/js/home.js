@@ -116,7 +116,8 @@ $(document).ready(function(){
 			//bg2.css('z-index', 5);
 			//bg2.show();
 			setTimeout(function(){
-				bg1.fadeOut(transition, fadeIn);
+				bg1.css('opacity', 0);
+				setTimeout(fadeIn, transition);
 			}, delay);
 		}
 		function fadeIn(){
@@ -126,7 +127,8 @@ $(document).ready(function(){
 			//bg2.css('z-index', 10);
 			//bg1.show();
 			setTimeout(function(){
-				bg1.fadeIn(transition, fadeOut);
+				bg1.css('opacity', 1);
+				setTimeout(fadeOut, transition);
 			}, delay);
 		}
 		fadeOut();

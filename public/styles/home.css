@@ -291,10 +291,10 @@ p{
 	left: 0;
 	will-change: opacity;
 	opacity: 1;
-	-webkit-transition: background-size 1s ease-in;
-	-moz-transition: background-size 1s ease-in;
-	-o-transition: background-size 1s ease-in;
-	transition: background-size 1s ease-in;
+	-webkit-transition: background-size 1s ease-in, opacity 2s linear;
+	-moz-transition: background-size 1s ease-in, opacity 2s linear;
+	-o-transition: background-size 1s ease-in, opacity 2s linear;
+	transition: background-size 1s ease-in, opacity 2s linear;
 }
 .introduce .introduce-bottom-bar{
 	width: 100%;

@@ -46,13 +46,6 @@ footer.main-footer footer figure{
 footer.main-footer footer figure .logo-piece{ 
 	fill: rgba(255, 255, 255, 0.14);
 }
-@media (max-width: 800px){
-	footer.main-footer:after{
-		content: '';
-		background-size: 100% 60%;
-	}
-}
-
 
 footer.main-footer .main-footer-content{ 
 	padding-top: 110px;
@@ -73,6 +66,11 @@ footer.main-footer .main-footer-content nav nav{
 
 @media (max-width: 800px){
 	
+	footer.main-footer:after{
+		content: '';
+		background-size: 100% 40%;
+	}
+
 	footer.main-footer .main-footer-content nav{ 
 		display: flex;
 		justify-content: center;
