@@ -24,12 +24,12 @@ backgroundUrls.forEach(function(bgUrl, i){
 */
 
 function parseToUrl(string){
-	let translate = { "ç": "c", "é": "e", "õ": 'o', "á": "a", "ã": "a", "à": "a", "ű": "u", "ő": "o", "ú": "u", "ö": "o", "ï": "i", "ü": "u", "ó": "o", "í": "i", "É": "E", "Á": "A", "Ű": "U", "Ő": "O", "Ú": "U", "Ö": "O", "Ü": "U", "Ó": "O", "Í": "I" };
-	let translate_re = new RegExp(`[${Object.keys(translate).join('')}]`, 'g'); 
+	var translate = { "ç": "c", "é": "e", "õ": 'o', "á": "a", "ã": "a", "à": "a", "ű": "u", "ő": "o", "ú": "u", "ö": "o", "ï": "i", "ü": "u", "ó": "o", "í": "i", "É": "E", "Á": "A", "Ű": "U", "Ő": "O", "Ú": "U", "Ö": "O", "Ü": "U", "Ó": "O", "Í": "I" };
+	var translate_re = new RegExp("[" + Object.keys(translate).join('') + "]", 'g'); 
 	
 	string = string.replace(/\s/g, '-')
 				   .replace(/\?/g, '')
-				   .replace(translate_re, letter => translate[letter]);
+				   .replace(translate_re, function(letter){ return translate[letter] });
 	return string.toLowerCase();
 }
 
@@ -139,14 +139,11 @@ $(document).ready(function(){
 	// Show Service Areas
 	function showServiceAreas() {
 		makeYouRelax.areaAcademy.addClass('showed');
-		makeYouRelax.areaAcademy.fadeTo('slow', 1);
 		setTimeout(function(){
 			makeYouRelax.areaSoftware.addClass('showed');
-			makeYouRelax.areaSoftware.fadeTo('slow', 1);
 		}, 300)
 		setTimeout(function(){
 			makeYouRelax.areaDesign.addClass('showed');
-			makeYouRelax.areaDesign.fadeTo('slow', 1);
 		}, 600)
 	}
 
