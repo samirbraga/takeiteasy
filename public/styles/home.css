@@ -465,7 +465,7 @@ p{
 		margin-top: 0;
 	}
 	.make-you-relax .services-area .service-area{
-		width: 50%;
+		width: 80%;
 		max-width: 300px;
 		display: block;
 		margin: 50px auto;
@@ -696,7 +696,8 @@ p{
 	padding: 10px 20px;
 }
 .meet-us article img{
-	width: 300px;
+	width: 100%;
+	max-width: 300px;
 }
 .meet-us article .article-content{
 	flex-grow: 1;

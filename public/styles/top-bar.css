@@ -8,14 +8,13 @@
 	-moz-transition: background-color 0.5s ease; 
 	-o-transition: background-color 0.5s ease; 
 	transition: background-color 0.5s ease;
+	height: 90px;
 }
 .top-bar.static{
 	position: absolute;
 	background: transparent;
-	height: 90px;
 }
 .top-bar.fixed{
-	height: 90px;
 	position: fixed;
 	background: #fbfcfd;/* 
 	-webkit-transform: translateY(-90px); 
@@ -322,4 +321,27 @@
 
 .top-bar .top-bar-content .side-menu .menu-options.main-menu-icon span:first-of-type{
 	margin-top: 20px;
+}
+
+@media (max-width: 320px), (max-height: 400px){
+	.top-bar{
+		height: 70px;
+	}
+	.top-bar .top-bar-content{
+		height: 65px;
+	}
+	.top-bar .top-bar-content .main-logo {
+	    margin: 15px 0 0 15px;
+	}
+	.top-bar .top-bar-content .main-logo svg{
+		height: 40px;
+		width: 110px;
+	}
+	.top-bar.fixed .top-bar-content .side-menu{
+		height: 65px;
+	}
+	.top-bar .top-bar-content .side-menu .menu-options {
+	    top: 6px;
+	    margin: 0;
+	}
 }
