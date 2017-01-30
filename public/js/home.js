@@ -35,6 +35,7 @@ function parseToUrl(string){
 
 
 $(document).ready(function(){
+	var body = $('body');
 	var mainServices = $('.main-services');
 	var introduce = $('.introduce');
 	var topBar = $('.top-bar');
@@ -65,6 +66,8 @@ $(document).ready(function(){
 		close: $('.main-menu-close')
 	}
 	
+	body.css('opacity', 1);
+
 	// Sequence services fade-in 
 	function fadeInServices(){
 		$('.service').each(function(i){
@@ -186,7 +189,7 @@ $(document).ready(function(){
 		}, 200);
 		renderResults(allResults[allResults.length-1])
 	});
-	$('body').on('click', function(){
+	body.on('click', function(){
 		generalSearch.css('width', '0');
 		tbMenuRoutes.css('opacity', 1);
 		autocomplete.fadeOut('fast')
@@ -336,7 +339,7 @@ $(document).ready(function(){
 	mainMenu.icon.click(function () {
 		mainMenu.container.fadeIn('fast');
 		mainMenu.self.addClass('showed');
-		$('body').css('overflow-y', 'hidden');
+		body.css('overflow-y', 'hidden');
 	})
 	mainMenu.self.click(function(e){
 		e.stopPropagation();
@@ -348,7 +351,7 @@ $(document).ready(function(){
 		setTimeout(function(){
 			self.fadeOut();
 		}, 100);
-		$('body').css('overflow-y', 'auto');
+		body.css('overflow-y', 'auto');
 	}
 
 	mainMenu.container.click(closeMenu);

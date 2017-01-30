@@ -39,6 +39,18 @@ load('controllers').
 		into(app);
 
 
+// Middlewares
+
+app.use((req, res, next) => {
+    res.render('not-found/index');
+    next();
+});
+app.use((req, res, next) => {
+    res.end('500 - Server Error');
+    next();
+});
+
+
 const port = Number( process.env.PORT || 8000 );
 server.listen(port, () => {
 	console.log('TakeItEasy running in port ' + port);

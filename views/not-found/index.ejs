@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" >
+		<title>Página Não Encontrada - TakeItEasy</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+   		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+   		<meta http-equiv="content-language" content="br" />
+   		<meta name="description" content="Temos a solução exata para o seu problema, você escolhe quanto pode pagar e a gente te ajuda." />
+		<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Asap|Cookie|Great+Vibes|Lobster|Merienda+One|Roboto" rel="stylesheet">
+		<!-- <link rel="stylesheet" href="/public/styles/normalize.css"> -->
+		<link rel="stylesheet" href="/public/styles/general-fonts.css">
+		<link rel="stylesheet" href="/public/styles/home.css">
+		<style>
+			html, body{
+				height: 100%;
+				width: 100%;
+			}
+			body{
+				background: #e9eff4;
+				opacity: 1;
+				color: #532068;
+			}
+			.section-body{
+				width: 100%;
+				max-width: 300px;
+				margin: auto;
+				position: absolute;
+			}
+			.section-body hr{
+				width: 30%;
+				height: 1px;
+				background: #532068;
+				margin: 20px auto;
+			}
+			.section-body header h1{
+				font-size: 8em;
+				font-family: 'Bree Th', sans-serif;
+				text-align: center;
+			}
+			.section-body header p{
+				font-size: 1.1em;
+				font-family: 'Asap', sans-serif;
+				text-align: center;
+			}
+			.section-body article{
+				width: 100%;
+				text-align: center;
+			}
+			.section-body article a{
+				display: block;
+				margin-top: 20px;
+			}
+			.section-body article h2{
+				font-size: 1.1em;
+				font-family: 'Roboto', sans-serif;
+			}
+			.section-body article p{	
+				font-family: 'Roboto', sans-serif;
+				font-size: 0.9em;
+				margin-top: 10px;
+			}
+			.section-body article svg{
+				display: block;
+				margin: auto;
+			}
+			.section-body article svg .logo-piece{
+				fill: #532068;
+				animation-name: pulse;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes pulse{
+				0%{
+					fill: #bc87d1;
+				}
+				80%{
+					fill: #532068;
+				}
+				100%{
+					fill: #bc87d1;
+				}
+			}
+
+		</style>
+	</head>
+	<body>
+			<section class="section-body center-both" >
+				<header>
+					<h1>404</h1>
+					<p>Página Não Encontrada.</p>
+				</header>
+				<hr>
+				<article>
+					<h2>Não encontrou o que procurava?</h2>
+					<p>Conheça-nos na nossa página principal:</p>
+					<a href="/">
+						<%- include('../logo-svg', {size: 'normal'}); %>
+					</a>
+				</article>
+			<%- include('../networking', {netw_class: 'dark'}); %>
+			</section>
+	</body>
+</html>
