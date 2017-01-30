@@ -33,8 +33,11 @@ function parseToUrl(string){
 	return string.toLowerCase();
 }
 
+	var w = 0;
+
 
 $(document).ready(function(){
+	var windows = $('body');
 	var body = $('body');
 	var mainServices = $('.main-services');
 	var introduce = $('.introduce');
@@ -67,6 +70,22 @@ $(document).ready(function(){
 	}
 	
 	body.css('opacity', 1);
+
+	w = windows.width();
+
+	windows.resize( function(){
+
+	  if( w != windows.width() ){
+
+	    introduce.css('height', (windows.height() - 100) + "px");
+
+	    w = windows.width();
+
+	    delete w;
+
+	  }
+
+	});
 
 	// Sequence services fade-in 
 	function fadeInServices(){
