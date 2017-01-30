@@ -72,6 +72,8 @@ $(document).ready(function(){
 	body.css('opacity', 1);
 
 	w = windows.width();
+	
+	introduce.css('height', (windows.height() - 100) + "px");
 
 	windows.resize( function(){
 
