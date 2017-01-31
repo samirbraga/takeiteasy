@@ -3,7 +3,7 @@
 	top: 0;
 	left: 0;
 	z-index: 100;	
-	will-change: transform;
+	/* will-change: transform; */
 	-webkit-transition: background-color 0.5s ease; 
 	-moz-transition: background-color 0.5s ease; 
 	-o-transition: background-color 0.5s ease; 
@@ -200,7 +200,7 @@
 .top-bar .top-bar-content .side-menu .menu-routes{
 	display: inline-block;
 	width: auto;
-	will-change: opacity;
+	will-change/* : opacity; */
 	opacity: 1;
 	-webkit-transition: opacity 0.3s ease-out;
 	-moz-transition: opacity 0.3s ease-out;
