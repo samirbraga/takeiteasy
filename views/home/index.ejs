@@ -5,10 +5,11 @@
 		<title><%- texts.companyName %></title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<meta name="google-site-verification" content="i0hmAGlyWWfJp-zK5fkx2v0emW_Itj01j6J3Iq1upBc" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-   		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-   		<meta http-equiv="content-language" content="br" />
-   		<meta name="description" content="Temos a solução exata para o seu problema, você escolhe quanto pode pagar e a gente te ajuda." />
+   	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+   	<meta http-equiv="content-language" content="br" />
+   	<meta name="description" content="Temos a solução exata para o seu problema, você escolhe quanto pode pagar e a gente te ajuda." />
 		<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Asap|Cookie|Great+Vibes|Lobster|Merienda+One|Roboto" rel="stylesheet">
 		<!-- <link rel="stylesheet" href="/public/styles/normalize.css"> -->
 		<link rel="stylesheet" href="/public/styles/general-fonts.css">
@@ -23,7 +24,7 @@
 	<body>
 		<% include ../topbar %>
 
-		<%- 
+		<%-
 			include('../main-menu', {
 				areaNames: {
 					design: texts.servicesAreas.design,
@@ -49,36 +50,36 @@
 			<!-- END section Makeyourelax -->
 
 			<!-- Section Design-area-explain -->
-			<%- 
-				include('section-design-area-explain', { 
+			<%-
+				include('section-design-area-explain', {
 					title: texts.servicesAreas.design.split(' '),
 					text: texts.sections.areaExplain.design
-				}); 
+				});
 			%>
 			<!-- END section Design-area-explain -->
 
 			<!-- Section Software-area-explain -->
-			<%- 
+			<%-
 				include('section-software-area-explain', {
 					title: texts.servicesAreas.software.split(' '),
 					text: texts.sections.areaExplain.software
-				}); 
+				});
 			%>
 			<!-- END section Software-area-explain -->
 
 			<!-- Section Academy-area-explain -->
-			<%- 
+			<%-
 				include('section-academy-area-explain', {
-					title: texts.servicesAreas.academy.split(' '), 
+					title: texts.servicesAreas.academy.split(' '),
 					text: texts.sections.areaExplain.academy
-				}); 
+				});
 			%>
 			<!-- END section Academy-area-explain -->
 
 			<!-- Section Main-skills -->
 			<%- include('section-main-skills'); %>
 			<!-- END section Main-skills -->
-		
+
 			<section class="meet-us" >
 				<header>
 					<h1 class="section-title" >
@@ -112,14 +113,14 @@
 				</article>
 			</section>
 		</main>
-		<%- 
+		<%-
 			include('../footer', {
 				areaNames: {
 					design: texts.servicesAreas.design,
 					software: texts.servicesAreas.software,
 					academy: texts.servicesAreas.academy,
 				}
-			}); 
+			});
 		%>
 		<script type="text/javascript" src="/public/js/libs/jquery-3.1.1.min.js" ></script>
 		<script type="text/javascript" src="/public/js/home.js" ></script>

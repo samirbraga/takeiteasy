@@ -69,8 +69,8 @@ $(document).ready(function(){
 		close: $('.main-menu-close')
 	}
 	
-	body.css('opacity', 1);
-
+	body.addClass('showed');
+	
 	w = windows.width();
 	
 	introduce.css('height', (windows.height() - 100) + "px");
@@ -116,48 +116,7 @@ $(document).ready(function(){
 		}, 1200)
 	}, 200);
 
-	// Infinite slide loop
-	function passSlide(){
-		var bg1 = $('#introduce-background1');
-		var bg2 = $('#introduce-background2');
-		var index = 0;
-		var delay = 5000;
-		var transition = 2000;
 
-		var increaseIndex = function(){
-			if(index >= dataImages.length-1){
-				index = 0;
-			}else{
-				index++;
-			}
-			return index;
-		}
-
-		function fadeOut(){
-			bg1.css('background-image', 'url("' + dataImages[index] + '")');
-			bg2.css('background-image', 'url("' + dataImages[increaseIndex()] + '")');
-			//bg1.css('z-index', 10);
-			//bg2.css('z-index', 5);
-			//bg2.show();
-			setTimeout(function(){
-				bg1.css('opacity', 0);
-				setTimeout(fadeIn, transition);
-			}, delay);
-		}
-		function fadeIn(){
-			bg2.css('background-image', 'url("' + dataImages[index] + '")');
-			bg1.css('background-image', 'url("' + dataImages[increaseIndex()] + '")');
-			//bg1.css('z-index', 5);
-			//bg2.css('z-index', 10);
-			//bg1.show();
-			setTimeout(function(){
-				bg1.css('opacity', 1);
-				setTimeout(fadeOut, transition);
-			}, delay);
-		}
-		fadeOut();
-	}
-	passSlide();
 	
 
 	// Show Service Areas
