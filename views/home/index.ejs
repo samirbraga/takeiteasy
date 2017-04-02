@@ -16,6 +16,29 @@
 		<link rel="stylesheet" href="/public/styles/top-bar.css">
 		<link rel="stylesheet" href="/public/styles/footer.css">
 		<link rel="stylesheet" href="/public/styles/home.css">
+
+		<script type="application/ld+json">
+		{
+		  "@context": "http://schema.org",
+		  "@type": "WebSite",
+		  "url": "http://takeiteasy.herokuapp.com/",
+		  "alternateName": "TakeItEasy"
+		}
+		</script>
+		<script type="application/ld+json">
+		{
+		  "@context": "http://schema.org",
+		  "@type": "Organization",
+		  "url": "http://takeiteasy.herokuapp.com/",
+		  "alternateName": "Ruas Biográficas",
+		  "logo": "http://takeiteasy.herokuapp.com/public/images/main-logo.png",
+		  "contactPoint": [{
+		    "@type": "ContactPoint",
+		    "telephone": "+55 085 99999-8888",
+		    "contactType": "customer service"
+		  }]
+		}
+		</script>
 		<script>
 			var services = <%- JSON.stringify(services) %>;
 			console.log(services)
